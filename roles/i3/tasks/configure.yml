@@ -30,16 +30,10 @@
     dest: "{{ i3_config_directory }}/03-apparence.conf"
     mode: 0664
 
-- name: Configure fonts...
-  ansible.builtin.template:
-    src: templates/04-fonts.conf.j2
-    dest: "{{ i3_config_directory }}/04-font.conf"
-    mode: 0664
-
 - name: Configure custom exec...
   ansible.builtin.template:
-    src: templates/05-exec.conf.j2
-    dest: "{{ i3_config_directory }}/05-exec.conf"
+    src: templates/04-exec.conf.j2
+    dest: "{{ i3_config_directory }}/04-exec.conf"
     mode: 0664
 
 ...

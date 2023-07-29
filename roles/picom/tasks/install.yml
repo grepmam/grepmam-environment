@@ -1,0 +1,9 @@
+---
+
+- name: Install picom...
+  become: true
+  community.general.pacman:
+    name: picom
+    state: present
+
+...

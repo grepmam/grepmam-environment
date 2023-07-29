@@ -6,9 +6,14 @@
 
   tasks:
 
-    - name: Include tasks from i3 role (install)...
+    - name: Include tasks from Picom role (install)...
       ansible.builtin.include_role:
-        name: i3
+        name: picom
+        tasks_from: install
+
+    - name: Include tasks from Terminator role (install)...
+      ansible.builtin.include_role:
+        name: terminator
         tasks_from: install
 
     - name: Include tasks from Flameshot role (install)...
@@ -16,14 +21,29 @@
         name: flameshot
         tasks_from: install
 
-    - name: Include tasks from i3 role (configure)...
+    - name: Include tasks from i3 role (install)...
       ansible.builtin.include_role:
         name: i3
+        tasks_from: install
+
+    - name: Include tasks from Picom role (configure)...
+      ansible.builtin.include_role:
+        name: picom
+        tasks_from: configure
+
+    - name: Include tasks from Terminator role (configure)...
+      ansible.builtin.include_role:
+        name: terminator
         tasks_from: configure
 
     - name: Include tasks from Flameshot role (configure)...
       ansible.builtin.include_role:
         name: flameshot
+        tasks_from: configure
+
+    - name: Include tasks from i3 role (configure)...
+      ansible.builtin.include_role:
+        name: i3
         tasks_from: configure
 
 ...

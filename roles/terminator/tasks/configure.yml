@@ -1,0 +1,15 @@
+---
+
+- name: Create Terminator config directory...
+  ansible.builtin.file:
+    path: "{{ terminator_directory }}"
+    state: directory
+    mode: 0755
+
+- name: Configure terminator...
+  ansible.builtin.template:
+    src: templates/config.j2
+    dest: "{{ terminator_directory }}/config"
+    mode: 0664
+
+...

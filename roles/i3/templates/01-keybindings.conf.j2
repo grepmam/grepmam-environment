@@ -1,5 +1,3 @@
-set $mod {{ i3_keybinding_leader }}
-
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
@@ -19,7 +17,6 @@ bindsym $mod+{{ i3_keybinding_split_vertical }} split v
 
 {% for name in i3_keybinding_workspace_group.workspaces %}
 {% set index = loop.index %}
-set $ws{{ index }} "{{ index }}: {{ name }}"
 bindsym $mod+{{ index }} workspace $ws{{ index }}
 bindsym $mod+Shift+{{ index }} move container to workspace $ws{{ index }}
 

@@ -1,0 +1,26 @@
+[global_config]
+  window_state = {{ terminator_global_window_state }}
+  borderless = {{ terminator_global_borderless }}
+  enabled_plugins = TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+[keybindings]
+  full_screen = Menu
+[profiles]
+  [[default]]
+    allow_bold = {{ terminator_profile_allow_bold }}
+    background_darkness = {{ terminator_profile_bg_darkness }}
+    background_type = {{ terminator_profile_bg_type }}
+    font = {{ terminator_profile_font }}
+    foreground_color = {{ terminator_profile_fg_color }}
+    show_titlebar = {{ terminator_profile_show_titlebar }}
+    scrollbar_position = {{ terminator_profile_scrollbar_position }}
+    scrollback_lines = {{ terminator_profile_scrollback_lines }}
+    palette = {{ terminator_profile_palette }}
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]

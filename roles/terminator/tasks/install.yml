@@ -1,0 +1,9 @@
+---
+
+- name: Install terminator...
+  become: true
+  community.general.pacman:
+    name: terminator
+    state: present
+
+...

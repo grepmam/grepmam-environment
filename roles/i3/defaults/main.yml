@@ -31,6 +31,15 @@ i3_font_size: 8
 
 i3_keybinding_leader: Mod4
 
+# --- Workspaces ---
+
+i3_keybinding_workspace_group:
+  workspaces:
+    - "Browser "
+    - "Terminal "
+    - "Virtual "
+    - "Random "
+
 # --- Focus ---
 
 i3_keybinding_focus_left: Left
@@ -49,16 +58,6 @@ i3_keybinding_move_window_right: Shift+Right
 
 i3_keybinding_split_horizontal: h
 i3_keybinding_split_vertical: v
-
-
-# --- Workspaces ---
-
-i3_keybinding_workspace_group:
-  workspaces:
-    - "Browser "
-    - "Terminal "
-    - "Virtual "
-    - "Random "
 
 # --- Configs --- 
 
@@ -100,9 +99,6 @@ i3_keybinding_custom_group:
     - name: poweroff
       post_key: Shift+o
       command: "poweroff"
-    - name: reboot
-      post_key: r
-      command: "reboot"
 
 
 ###########################

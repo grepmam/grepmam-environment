@@ -1,0 +1,18 @@
+---
+
+terminator_directory: /home/grepmam/.config/terminator
+
+terminator_global_window_state: maximise
+terminator_global_borderless: "True"
+
+terminator_profile_allow_bold: "False"
+terminator_profile_bg_darkness: 0.75
+terminator_profile_bg_type: transparent
+terminator_profile_font: "Font Awesome 6 Brands 10"
+terminator_profile_fg_color: "#83d9b6"
+terminator_profile_show_titlebar: "False"
+terminator_profile_scrollbar_position: hidden
+terminator_profile_scrollback_lines: 10000
+terminator_profile_palette: "#000000:#ff2727:#4e9a06:#c4a000:#34609a:#9c5ea5:#06989a:#95906a:#dddddd:#ff7f7f:#8ae234:#fce94f:#70a7e2:#da84d1:#34e2e2:#e2dfa6"
+
+...

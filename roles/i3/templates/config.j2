@@ -1,5 +1,21 @@
-include {{ i3_config_directory }}/01-keybindings.conf
-include {{ i3_config_directory }}/02-window-rules.conf
-include {{ i3_config_directory }}/03-apparence.conf
-include {{ i3_config_directory }}/04-fonts.conf
-include {{ i3_config_directory }}/05-exec.conf
+# --- Global ---
+
+# Leader
+
+set $mod {{ i3_keybinding_leader }}
+
+# Workspaces
+
+{% for name in i3_keybinding_workspace_group.workspaces %}
+{% set index = loop.index %}
+set $ws{{ index }} "{{ index }}: {{ name }}"
+{% endfor %}
+
+# Font
+
+font {{ i3_font_name }}:{{ i3_font_type }} {{ i3_font_size }}
+
+
+# --- All the rest ---
+
+include {{ i3_config_directory }}/*

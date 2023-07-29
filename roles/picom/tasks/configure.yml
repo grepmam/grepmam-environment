@@ -1,0 +1,15 @@
+---
+
+- name: Create Picom config directory...
+  ansible.builtin.file:
+    path: "{{ picom_directory }}"
+    state: directory
+    mode: 0755
+
+- name: Configure Picom...
+  ansible.builtin.template:
+    src: templates/picom.conf.j2
+    dest: "{{ picom_directory }}/picom.conf"
+    mode: 0664
+
+...
