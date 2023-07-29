@@ -1,0 +1,45 @@
+---
+
+- name: ...
+  ansible.builtin.template:
+    src: templates/config.j2
+    dest: "{{ i3_directory }}/config"
+    mode: 0664
+
+- name: Create i3 config directory...
+  ansible.builtin.file:
+    path: "{{ i3_config_directory }}"
+    state: directory
+    mode: 0755
+
+- name: Configure keybindings...
+  ansible.builtin.template:
+    src: templates/01-keybindings.conf.j2
+    dest: "{{ i3_config_directory }}/01-keybindings.conf"
+    mode: 0664
+
+- name: Configure window rules...
+  ansible.builtin.template:
+    src: templates/02-window-rules.conf.j2
+    dest: "{{ i3_config_directory }}/02-windows-rules.conf"
+    mode: 0664
+
+- name: Configure apparence...
+  ansible.builtin.template:
+    src: templates/03-apparence.conf.j2
+    dest: "{{ i3_config_directory }}/03-apparence.conf"
+    mode: 0664
+
+- name: Configure fonts...
+  ansible.builtin.template:
+    src: templates/04-fonts.conf.j2
+    dest: "{{ i3_config_directory }}/04-font.conf"
+    mode: 0664
+
+- name: Configure custom exec...
+  ansible.builtin.template:
+    src: templates/05-exec.conf.j2
+    dest: "{{ i3_config_directory }}/05-exec.conf"
+    mode: 0664
+
+...

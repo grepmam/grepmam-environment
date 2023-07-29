@@ -1,0 +1,176 @@
+---
+
+###########################
+#                         #
+#        General          #
+#                         #
+###########################
+
+i3_directory: /home/grepmam/.config/i3
+i3_config_directory: "{{ i3_directory }}/config.d"
+
+
+###########################
+#                         #
+#         Fonts           #
+#                         #
+###########################
+
+i3_font_name: pango
+i3_font_type: monospace
+i3_font_size: 8
+
+
+###########################
+#                         #
+#      Keybindings        #
+#                         #
+###########################
+
+# --- Main key --- 
+
+i3_keybinding_leader: Mod4
+
+# --- Focus ---
+
+i3_keybinding_focus_left: Left
+i3_keybinding_focus_down: Down
+i3_keybinding_focus_up: Up
+i3_keybinding_focus_right: Right
+
+# --- Move focused window ---
+
+i3_keybinding_move_window_left: Shift+Left
+i3_keybinding_move_window_down: Shift+Down
+i3_keybinding_move_window_up: Shift+Up
+i3_keybinding_move_window_right: Shift+Right
+
+# --- Split ---
+
+i3_keybinding_split_horizontal: h
+i3_keybinding_split_vertical: v
+
+
+# --- Workspaces ---
+
+i3_keybinding_workspace_group:
+  workspaces:
+    - "Browser "
+    - "Terminal "
+    - "Virtual "
+    - "Random "
+
+# --- Configs --- 
+
+i3_keybinding_reload_configuration: Shift+c
+i3_keybinding_restart_configuration: Shift+r
+
+# --- Resize window ---
+
+i3_keybinding_resize_window_left: Ctrl+Left
+i3_keybinding_resize_window_down: Ctrl+Down
+i3_keybinding_resize_window_up: Ctrl+Up
+i3_keybinding_resize_window_right: Ctrl+Right
+
+# --- Others ---
+
+i3_keybinding_fullscreen: f
+i3_keybinding_kill_focused_window: q
+i3_keybinding_toggle_tilling_or_floating: Shift+space
+
+# --- Custom ---
+
+i3_keybinding_custom_group:
+  custom:
+    - name: rofi
+      post_key: d
+      command: "rofi -show drun -theme Monokai -icon-theme 'Tela-circle' -show-icons"
+    - name: feh
+      post_key: b
+      command: "bash $HOME/.fehbg"
+    - name: locker
+      post_key: l
+      command: "light-locker-command --lock"
+    - name: flameshot
+      post_key: u
+      command: "flameshot gui"
+    - name: terminal
+      post_key: Return
+      command: "terminator"
+    - name: poweroff
+      post_key: Shift+o
+      command: "poweroff"
+    - name: reboot
+      post_key: r
+      command: "reboot"
+
+
+###########################
+#                         #
+#         Colors          #
+#                         #
+###########################
+
+i3_color_default_1: '#83d9b6'
+i3_color_default_2: '#03663e'
+i3_color_default_3: '#fdf6e3'
+
+
+###########################
+#                         #
+#         Borders         #
+#                         #
+###########################
+
+i3_client_focused_border: "{{ i3_color_default_1 }}"
+i3_client_focused_background: "{{ i3_color_default_1 }}"
+i3_client_focused_text: "{{ i3_color_default_1 }}"
+i3_client_focused_indicator: "{{ i3_color_default_1 }}"
+
+i3_client_focused_inactive_border: "{{ i3_color_default_2 }}"
+i3_client_focused_inactive_background: "{{ i3_color_default_2 }}"
+i3_client_focused_inactive_text: "{{ i3_color_default_3 }}"
+i3_client_focused_inactive_indicator: "{{ i3_color_default_2 }}"
+
+i3_client_unfocused_border: "{{ i3_color_default_2 }}"
+i3_client_unfocused_inactive_background: "{{ i3_color_default_2 }}"
+i3_client_unfocused_inactive_text: "{{ i3_color_default_3 }}"
+i3_client_unfocused_inactive_indicator: "{{ i3_color_default_2 }}"
+
+
+###########################
+#                         #
+#         Exec            #
+#                         #
+###########################
+
+i3_exec_group:
+  commands:
+    - name: xrandr
+      command: "xrandr --output HDMI-0 --mode 1920x1080 --right-of eDP-1-1 --primary"
+    - name: feh background script
+      command: "bash $HOME/.fehbg"
+    - name: picom
+      command: "picom --config ~/.config/picom/picom.conf -b"
+    - name: locker
+      command: "/usr/bin/light-locker"
+    - name: mpv
+      command: "mpv --no-video ~/Música/linux-mint-sound.mp3"
+    - name: polybar script
+      command: "bash $HOME/.config/polybar/launch.sh"
+
+
+###########################
+#                         #
+#      Windows rules      #
+#                         #
+###########################
+
+i3_window_rules_group:
+  windows:
+    - class: firefox
+      instance: firefox
+    - class: Terminator
+      instance: terminator
+
+...

@@ -1,0 +1,4 @@
+{% for item in i3_exec_group.commands %}
+# Exec Command: {{ item.name }}
+exec --no-startup-id {{ item.command }}
+{% endfor %}

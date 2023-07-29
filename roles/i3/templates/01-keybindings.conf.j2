@@ -1,0 +1,56 @@
+set $mod {{ i3_keybinding_leader }}
+
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
+
+bindsym $mod+{{ i3_keybinding_focus_left }} focus left
+bindsym $mod+{{ i3_keybinding_focus_down }} focus down
+bindsym $mod+{{ i3_keybinding_focus_up }} focus up
+bindsym $mod+{{ i3_keybinding_focus_right }} focus right
+
+bindsym $mod+{{ i3_keybinding_move_window_left }} move left
+bindsym $mod+{{ i3_keybinding_move_window_down }} move down
+bindsym $mod+{{ i3_keybinding_move_window_up }} move up
+bindsym $mod+{{ i3_keybinding_move_window_right }} move right
+
+bindsym $mod+{{ i3_keybinding_split_horizontal }} split h
+bindsym $mod+{{ i3_keybinding_split_vertical }} split v
+
+{% for name in i3_keybinding_workspace_group.workspaces %}
+{% set index = loop.index %}
+set $ws{{ index }} "{{ index }}: {{ name }}"
+bindsym $mod+{{ index }} workspace $ws{{ index }}
+bindsym $mod+Shift+{{ index }} move container to workspace $ws{{ index }}
+
+{% endfor %}
+
+bindsym $mod+{{ i3_keybinding_reload_configuration }} reload
+bindsym $mod+{{ i3_keybinding_restart_configuration }} restart
+
+mode "resize" {
+
+        bindsym {{ i3_keybinding_resize_window_left }} resize shrink width 10 px or 10 ppt
+        bindsym {{ i3_keybinding_resize_window_down }} resize grow height 10 px or 10 ppt
+        bindsym {{ i3_keybinding_resize_window_up }} resize shrink height 10 px or 10 ppt
+        bindsym {{ i3_keybinding_resize_window_right }} resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+
+}
+
+bindsym $mod+{{ i3_keybinding_resize_window_left }} resize shrink width 1 px or 1 ppt
+bindsym $mod+{{ i3_keybinding_resize_window_down }} resize grow height 1 px or 1 ppt
+bindsym $mod+{{ i3_keybinding_resize_window_up }} resize shrink height 1 px or 1 ppt
+bindsym $mod+{{ i3_keybinding_resize_window_right }} resize grow width 1 px or 1 ppt
+bindsym $mod+r mode "resize"
+
+bindsym $mod+{{ i3_keybinding_fullscreen }} fullscreen toggle
+bindsym $mod+{{ i3_keybinding_kill_focused_window }} kill
+bindsym $mod+{{ i3_keybinding_toggle_tilling_or_floating }} floating toggle
+
+{% for item in i3_keybinding_custom_group.custom %}
+# Command: {{ item.name }}
+bindsym $mod+{{ item.post_key }} exec "{{ item.command }}"
+{% endfor %}
