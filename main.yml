@@ -11,9 +11,19 @@
         name: i3
         tasks_from: install
 
+    - name: Include tasks from Flameshot role (install)...
+      ansible.builtin.include_role:
+        name: flameshot
+        tasks_from: install
+
     - name: Include tasks from i3 role (configure)...
       ansible.builtin.include_role:
         name: i3
+        tasks_from: configure
+
+    - name: Include tasks from Flameshot role (configure)...
+      ansible.builtin.include_role:
+        name: flameshot
         tasks_from: configure
 
 ...

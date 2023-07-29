@@ -1,0 +1,15 @@
+---
+
+- name: Create Flameshot config directory...
+  ansible.builtin.file:
+    path: "{{ flameshot_config_directory }}"
+    state: directory
+    mode: 0755
+
+- name: Configure flameshot...
+  ansible.builtin.template:
+    src: templates/flameshot.ini.j2
+    dest: "{{ flameshot_config_directory }}/flameshot.ini"
+    mode: 0664
+
+...
