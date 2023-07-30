@@ -1,0 +1,17 @@
+---
+
+polybar_directory: /home/grepmam/.config/polybar
+polybar_config_directory: "{{ polybar_directory }}/config.d"
+polybar_scripts_directory: "{{ polybar_directory }}/scripts"
+
+polybar_color_background: "#88000000"
+polybar_color_background_alt: "#373B41"
+polybar_color_foreground: "#83d9b6"
+polybar_color_foreground_alt: ""
+polybar_color_primary: "#83d9b6"
+polybar_color_secondary: "#83d9b6"
+polybar_color_alert: "#A54242"
+polybar_color_disabled: "#707880"
+polybar_color_icon: "#fff700"
+
+...

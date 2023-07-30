@@ -1,0 +1,57 @@
+---
+
+- name: Create Polybar config directory...
+  ansible.builtin.file:
+    path: "{{ polybar_config_directory }}"
+    state: directory
+    mode: 0755
+
+- name: Create colors config...
+  ansible.builtin.template:
+    src: templates/colors.ini.j2
+    dest: "{{ polybar_config_directory }}/colors.ini"
+    mode: 0664
+
+- name: Create bars config...
+  ansible.builtin.template:
+    src: templates/bars.ini.j2
+    dest: "{{ polybar_config_directory }}/bars.ini"
+    mode: 0664
+
+- name: Create modules config...
+  ansible.builtin.template:
+    src: templates/modules.ini.j2
+    dest: "{{ polybar_config_directory }}/modules.ini"
+    mode: 0664
+
+- name: Create user modules config...
+  ansible.builtin.template:
+    src: templates/user_modules.ini.j2
+    dest: "{{ polybar_config_directory }}/user_modules.ini"
+    mode: 0664
+
+- name: Create scripts directory...
+  ansible.builtin.file:
+    path: "{{ polybar_scripts_directory }}"
+    state: directory
+    mode: 0755
+
+- name: Copy scripts to Polybar Scripts directory
+  ansible.builtin.copy:
+    src: scripts/dollar.sh
+    dest: "{{ polybar_scripts_directory }}"
+    mode: 0755
+
+- name: Create Polybar config...
+  ansible.builtin.template:
+    src: templates/config.ini.j2
+    dest: "{{ polybar_directory }}/config.ini"
+    mode: 0664
+
+- name: Copy launch.sh to Polybar directory
+  ansible.builtin.copy:
+    src: launch.sh
+    dest: "{{ polybar_directory }}"
+    mode: 0755
+
+...

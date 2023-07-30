@@ -23,6 +23,16 @@ i3_font_size: 8
 
 ###########################
 #                         #
+#         Fonts           #
+#                         #
+###########################
+
+i3_gaps_inner: 10
+i3_gaps_outer: 10
+
+
+###########################
+#                         #
 #      Keybindings        #
 #                         #
 ###########################
@@ -164,9 +174,7 @@ i3_exec_group:
 
 i3_window_rules_group:
   windows:
-    - class: firefox
-      instance: firefox
-    - class: Terminator
-      instance: terminator
+    - firefox
+    - Terminator
 
 ...

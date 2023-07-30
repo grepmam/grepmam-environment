@@ -1,0 +1,22 @@
+---
+
+- name: Crear directorio para Nerd Fonts en los hosts remotos
+  ansible.builtin.file:
+    path: "{{ fonts_directory }}/nerd_fonts"
+    state: directory
+    mode: 0755
+
+- name: Copy Nerd Fonts...
+  ansible.builtin.copy:
+    src: /tmp/nerd_fonts.zip
+    dest: "{{ fonts_directory }}/nerd_fonts"
+
+- name: Extract Nerd Fonts...
+  ansible.builtin.unarchive:
+    src: "{{ fonts_directory }}/nerd_fonts/nerd_fonts.zip"
+    dest: "{{ fonts_directory }}/nerd_fonts/"
+
+- name: Update font cache...
+  ansible.builtin.command: fc-cache -f -v
+
+...

@@ -6,9 +6,19 @@
 
   tasks:
 
+    - name: Include tasks from Fonts role (install)...
+      ansible.builtin.include_role:
+        name: fonts
+        tasks_from: install
+
     - name: Include tasks from Picom role (install)...
       ansible.builtin.include_role:
         name: picom
+        tasks_from: install
+
+    - name: Include tasks from Polybar role (install)...
+      ansible.builtin.include_role:
+        name: polybar
         tasks_from: install
 
     - name: Include tasks from Terminator role (install)...
@@ -26,9 +36,19 @@
         name: i3
         tasks_from: install
 
+    - name: Include tasks from Fonts role (configure)...
+      ansible.builtin.include_role:
+        name: fonts
+        tasks_from: configure
+
     - name: Include tasks from Picom role (configure)...
       ansible.builtin.include_role:
         name: picom
+        tasks_from: configure
+
+    - name: Include tasks from Polybar role (configure)...
+      ansible.builtin.include_role:
+        name: polybar
         tasks_from: configure
 
     - name: Include tasks from Terminator role (configure)...

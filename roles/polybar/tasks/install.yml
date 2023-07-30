@@ -1,0 +1,9 @@
+---
+
+- name: Install Polybar...
+  become: true
+  community.general.pacman:
+    name: polybar
+    state: present
+
+...
