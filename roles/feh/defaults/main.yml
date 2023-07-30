@@ -1,0 +1,7 @@
+---
+
+feh_home_directory: "{{ lookup('env','HOME') }}"
+feh_wallpapers_directory: "{{ feh_home_directory }}/.wallpapers"
+feh_background_image: cyberpunk3.jpg
+
+...

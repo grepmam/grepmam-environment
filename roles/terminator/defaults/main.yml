@@ -1,6 +1,8 @@
 ---
 
-terminator_directory: /home/grepmam/.config/terminator
+terminator_home_directory: "{{ lookup('env','HOME') }}"
+
+terminator_directory: "{{ terminator_home_directory }}/.config/terminator"
 
 terminator_global_window_state: maximise
 terminator_global_borderless: "True"

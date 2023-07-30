@@ -1,6 +1,6 @@
 ---
 
-- name: Crear directorio para Nerd Fonts en los hosts remotos
+- name: Create Nerd Fonts directory...
   ansible.builtin.file:
     path: "{{ fonts_directory }}/nerd_fonts"
     state: directory

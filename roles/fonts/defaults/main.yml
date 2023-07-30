@@ -1,5 +1,7 @@
 ---
 
-fonts_directory: /home/grepmam/.local/share/fonts
+fonts_home_directory: "{{ lookup('env','HOME') }}"
+
+fonts_directory: "{{ fonts_home_directory }}/.local/share/fonts"
 
 ...

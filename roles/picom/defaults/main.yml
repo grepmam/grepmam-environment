@@ -1,6 +1,8 @@
 ---
 
-picom_directory: /home/grepmam/.config/picom
+picom_home_directory: "{{ lookup('env','HOME') }}" 
+
+picom_directory: "{{ picom_home_directory }}/.config/picom"
 
 picom_shadows: "true"
 picom_shadows_radius: 7

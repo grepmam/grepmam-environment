@@ -6,64 +6,49 @@
 
   tasks:
 
-    - name: Include tasks from Fonts role (install)...
-      ansible.builtin.include_role:
+    - name: Import Fonts role...
+      ansible.builtin.import_role:
         name: fonts
-        tasks_from: install
+      tags: fonts
 
-    - name: Include tasks from Picom role (install)...
-      ansible.builtin.include_role:
+    - name: Import Picom role...
+      ansible.builtin.import_role:
         name: picom
-        tasks_from: install
+      tags: picom
 
-    - name: Include tasks from Polybar role (install)...
-      ansible.builtin.include_role:
+    - name: Import Polybar role...
+      ansible.builtin.import_role:
         name: polybar
-        tasks_from: install
+      tags: polybar
 
-    - name: Include tasks from Terminator role (install)...
-      ansible.builtin.include_role:
+    - name: Import Terminator role...
+      ansible.builtin.import_role:
         name: terminator
-        tasks_from: install
+      tags: terminator
 
-    - name: Include tasks from Flameshot role (install)...
-      ansible.builtin.include_role:
+    - name: Import Flameshot role...
+      ansible.builtin.import_role:
         name: flameshot
-        tasks_from: install
+      tags: flameshot
 
-    - name: Include tasks from i3 role (install)...
-      ansible.builtin.include_role:
+    - name: Import Rofi role...
+      ansible.builtin.import_role:
+        name: rofi
+      tags: rofi
+
+    - name: Import Feh role...
+      ansible.builtin.import_role:
+        name: feh
+      tags: feh
+
+    - name: Import i3 role...
+      ansible.builtin.import_role:
         name: i3
-        tasks_from: install
+      tags: i3
 
-    - name: Include tasks from Fonts role (configure)...
-      ansible.builtin.include_role:
-        name: fonts
-        tasks_from: configure
-
-    - name: Include tasks from Picom role (configure)...
-      ansible.builtin.include_role:
-        name: picom
-        tasks_from: configure
-
-    - name: Include tasks from Polybar role (configure)...
-      ansible.builtin.include_role:
-        name: polybar
-        tasks_from: configure
-
-    - name: Include tasks from Terminator role (configure)...
-      ansible.builtin.include_role:
-        name: terminator
-        tasks_from: configure
-
-    - name: Include tasks from Flameshot role (configure)...
-      ansible.builtin.include_role:
-        name: flameshot
-        tasks_from: configure
-
-    - name: Include tasks from i3 role (configure)...
-      ansible.builtin.include_role:
-        name: i3
-        tasks_from: configure
+    - name: Import ZSH role...
+      ansible.builtin.import_role:
+        name: zsh
+      tags: zsh
 
 ...

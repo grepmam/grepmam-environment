@@ -6,7 +6,9 @@
 #                         #
 ###########################
 
-i3_directory: /home/grepmam/.config/i3
+i3_home_directory: "{{ lookup('env','HOME') }}"
+
+i3_directory: "{{ i3_home_directory }}/.config/i3"
 i3_config_directory: "{{ i3_directory }}/config.d"
 
 
@@ -93,7 +95,7 @@ i3_keybinding_custom_group:
   custom:
     - name: rofi
       post_key: d
-      command: "rofi -show drun -theme Monokai -icon-theme 'Tela-circle' -show-icons"
+      command: "rofi -config ~/.config/rofi/config.rasi -theme Monokai -show drun"
     - name: feh
       post_key: b
       command: "bash $HOME/.fehbg"

@@ -1,0 +1,6 @@
+---
+
+zsh_home_directory: "{{ lookup('env','HOME') }}"
+zsh_theme: kafeitu
+
+...

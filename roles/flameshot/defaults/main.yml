@@ -1,6 +1,8 @@
 ---
 
-flameshot_config_directory: /home/grepmam/.config/flameshot
-flameshot_save_folder: /home/grepmam/Imágenes
+flameshot_home_directory: "{{ lookup('env','HOME') }}"
+
+flameshot_config_directory: "{{ flameshot_home_directory }}/.config/flameshot"
+flameshot_save_folder: "{{ flameshot_home_directory }}/Imágenes"
 
 ...

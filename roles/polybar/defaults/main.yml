@@ -1,6 +1,8 @@
 ---
 
-polybar_directory: /home/grepmam/.config/polybar
+polybar_home_directory: "{{ lookup('env','HOME') }}"
+
+polybar_directory: "{{ polybar_home_directory }}/.config/polybar"
 polybar_config_directory: "{{ polybar_directory }}/config.d"
 polybar_scripts_directory: "{{ polybar_directory }}/scripts"
 

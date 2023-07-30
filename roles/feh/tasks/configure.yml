@@ -1,0 +1,21 @@
+---
+
+- name: Create feh wallpapers directory...
+  ansible.builtin.file:
+    path: "{{ feh_wallpapers_directory }}"
+    state: directory
+    mode: 0755
+
+- name: Copy background image to wallpapers directory...
+  ansible.builtin.copy:
+    src: "{{ feh_background_image }}"
+    dest: "{{ feh_wallpapers_directory }}"
+    mode: 0755
+
+- name: Configure feh for backgrounds...
+  ansible.builtin.template:
+    src: templates/fehbg.j2
+    dest: "{{ feh_home_directory }}/.fehbg"
+    mode: 0664
+
+...

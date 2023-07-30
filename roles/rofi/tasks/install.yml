@@ -1,0 +1,9 @@
+---
+
+- name: Install Rofi...
+  become: true
+  community.general.pacman:
+    name: rofi
+    state: present
+
+... 

@@ -1,0 +1,23 @@
+---
+
+- name: Set ZSH as default shell...
+  become: true
+  ansible.builtin.command: chsh -s /usr/bin/zsh
+
+- name: Download Oh-My-ZSH installer...
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+    dest: /tmp/oh-my-zsh_install.sh
+
+- name: Install Oh-My-ZSH...
+  ansible.builtin.command: sh /tmp/oh-my-zsh_install.sh
+  args:
+    creates: "{{ zsh_home_directory }}/.oh-my-zsh"
+
+- name: Configure zshrc...
+  ansible.builtin.template:
+    src: templates/zshrc.j2
+    dest: "{{ zsh_home_directory }}/.zshrc"
+    mode: 0664
+
+...

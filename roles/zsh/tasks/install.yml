@@ -1,0 +1,12 @@
+---
+
+- name: Install ZSH...
+  become: true
+  community.general.pacman:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - git
+    - zsh
+
+...

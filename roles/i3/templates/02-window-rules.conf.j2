@@ -2,7 +2,7 @@ for_window [class=".*"] border pixel 2
 hide_edge_borders both
 
 {% for item in i3_window_rules_group.windows %}
-assign [class="{{ item }}"]
+assign [class="{{ item }}"] $ws{{ loop.index }}
 for_window [class="{{ item }}"] focus
 
 {% endfor %}
