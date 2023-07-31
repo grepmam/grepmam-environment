@@ -1,0 +1,32 @@
+---
+
+- name: Delete old settings directory
+  ansible.builtin.file:
+    state: absent
+    path: "{{ mpv_config_directory }}"
+
+- name: Create mpv config directory...
+  ansible.builtin.file:
+    path: "{{ mpv_config_directory }}"
+    state: directory
+    mode: 0755
+
+- name: Configure mpv...
+  ansible.builtin.template:
+    src: templates/mpv.conf.j2
+    dest: "{{ mpv_config_directory }}/mpv.conf"
+    mode: 0664
+
+- name: Create startup sounds directory...
+  ansible.builtin.file:
+    path: "{{ mpv_startup_sounds_directory }}"
+    state: directory
+    mode: 0755
+
+- name: Copy startup sound to startup sounds directory
+  ansible.builtin.copy:
+    src: "{{ mpv_startup_sound }}"
+    dest: "{{ mpv_startup_sounds_directory }}"
+    mode: 0755
+
+...

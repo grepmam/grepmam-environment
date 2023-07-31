@@ -1,0 +1,11 @@
+---
+
+mpv_home_directory: "{{ mpv_user_home }}"
+mpv_config_directory: "{{ mpv_home_directory }}/.config/mpv"
+mpv_startup_sounds_directory: "{{ mpv_home_directory }}/.startup_sounds"
+mpv_startup_sound: linux-mint-sound.mp3
+
+mpv_video_fullscreen: "yes"
+mpv_other_display_subtitles: en 
+
+...

@@ -8,8 +8,8 @@
 
 i3_home_directory: "{{ i3_user_home }}"
 
-i3_directory: "{{ i3_home_directory }}/.config/i3"
-i3_config_directory: "{{ i3_directory }}/config.d"
+i3_config_directory: "{{ i3_home_directory }}/.config/i3"
+i3_subconfig_directory: "{{ i3_config_directory }}/config.d"
 
 
 ###########################
@@ -163,7 +163,7 @@ i3_exec_group:
     - name: locker
       command: "/usr/bin/light-locker"
     - name: mpv
-      command: "mpv --no-video ~/Música/linux-mint-sound.mp3"
+      command: "mpv --no-video ~/.startup_sounds/linux-mint-sound.mp3"
     - name: polybar script
       command: "bash $HOME/.config/polybar/launch.sh"
 

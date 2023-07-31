@@ -1,7 +1,7 @@
 ---
 
 neofetch_home_directory: "{{ neofetch_user_home }}"
-neofetch_directory: "{{ neofetch_home_directory }}/.config/neofetch"
-neofetch_config_directory: "{{ neofetch_directory }}/config.d"
+neofetch_config_directory: "{{ neofetch_home_directory }}/.config/neofetch"
+neofetch_subconfig_directory: "{{ neofetch_config_directory }}/config.d"
 
 ...

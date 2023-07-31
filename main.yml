@@ -68,6 +68,13 @@
         feh_user_home: "{{ user.home }}"
       tags: feh
 
+    - name: Import mpv role...
+      ansible.builtin.import_role:
+        name: mpv
+      vars:
+        mpv_user_home: "{{ user.home }}"
+      tags: mpv
+
     - name: Import i3 role...
       ansible.builtin.import_role:
         name: i3

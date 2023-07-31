@@ -1,8 +1,7 @@
 ---
 
 terminator_home_directory: "{{ terminator_user_home }}"
-
-terminator_directory: "{{ terminator_home_directory }}/.config/terminator"
+terminator_config_directory: "{{ terminator_home_directory }}/.config/terminator"
 
 terminator_global_window_state: maximise
 terminator_global_borderless: "True"

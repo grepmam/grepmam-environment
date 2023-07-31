@@ -3,7 +3,7 @@
 - name: Delete old settings directory
   ansible.builtin.file:
     state: absent
-    path: "{{ polybar_directory }}"
+    path: "{{ polybar_config_directory }}"
 
 - name: Create Polybar config directory...
   ansible.builtin.file:
@@ -11,10 +11,16 @@
     state: directory
     mode: 0755
 
+- name: Create Polybar subconfig directory...
+  ansible.builtin.file:
+    path: "{{ polybar_subconfig_directory }}"
+    state: directory
+    mode: 0755
+
 - name: Create subconfigs...
   ansible.builtin.template:
     src: templates/{{ item }}.ini.j2
-    dest: "{{ polybar_config_directory }}/{{ item }}.ini"
+    dest: "{{ polybar_subconfig_directory }}/{{ item }}.ini"
     mode: 0664
   loop:
     - colors
@@ -37,13 +43,13 @@
 - name: Create Polybar config...
   ansible.builtin.template:
     src: templates/config.ini.j2
-    dest: "{{ polybar_directory }}/config.ini"
+    dest: "{{ polybar_config_directory }}/config.ini"
     mode: 0664
 
 - name: Copy launch.sh to Polybar directory
   ansible.builtin.copy:
     src: launch.sh
-    dest: "{{ polybar_directory }}"
+    dest: "{{ polybar_config_directory }}"
     mode: 0755
 
 ...

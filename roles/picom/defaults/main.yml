@@ -1,8 +1,7 @@
 ---
 
 picom_home_directory: "{{ picom_user_home }}" 
-
-picom_directory: "{{ picom_home_directory }}/.config/picom"
+picom_config_directory: "{{ picom_home_directory }}/.config/picom"
 
 picom_shadows: "true"
 picom_shadows_radius: 7

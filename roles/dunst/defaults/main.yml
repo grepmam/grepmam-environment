@@ -1,7 +1,7 @@
 ---
 
 dunst_home_directory: "{{ dunst_user_home }}" 
-dunst_directory: "{{ dunst_home_directory }}/.config/dunst"
+dunst_config_directory: "{{ dunst_home_directory }}/.config/dunst"
 
 dunst_global_monitor: 0
 dunst_global_follow: mouse

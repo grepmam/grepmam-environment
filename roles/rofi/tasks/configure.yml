@@ -1,15 +1,20 @@
 ---
 
+- name: Delete old settings directory
+  ansible.builtin.file:
+    state: absent
+    path: "{{ rofi_config_directory }}"
+
 - name: Create Rofi config directory...
   ansible.builtin.file:
-    path: "{{ rofi_directory }}"
+    path: "{{ rofi_config_directory }}"
     state: directory
     mode: 0755
 
 - name: Configure Rofi...
   ansible.builtin.template:
     src: templates/config.rasi.j2
-    dest: "{{ rofi_directory }}/config.rasi"
+    dest: "{{ rofi_config_directory }}/config.rasi"
     mode: 0664
 
 ...

@@ -1,15 +1,20 @@
 ---
 
+- name: Delete old settings directory
+  ansible.builtin.file:
+    state: absent
+    path: "{{ lsd_config_directory }}"
+
 - name: Create LSD config directory...
   ansible.builtin.file:
-    path: "{{ lsd_directory }}"
+    path: "{{ lsd_config_directory }}"
     state: directory
     mode: 0755
 
 - name: Configure LSD...
   ansible.builtin.template:
     src: templates/config.yaml.j2
-    dest: "{{ lsd_directory }}/config.yaml"
+    dest: "{{ lsd_config_directory }}/config.yaml"
     mode: 0664
 
 ...

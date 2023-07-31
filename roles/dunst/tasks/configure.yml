@@ -1,15 +1,20 @@
 ---
 
+- name: Delete old settings directory
+  ansible.builtin.file:
+    state: absent
+    path: "{{ dunst_config_directory }}"
+
 - name: Create dunst directory...
   ansible.builtin.file:
-    path: "{{ dunst_directory }}"
+    path: "{{ dunst_config_directory }}"
     state: directory
     mode: 0755
 
 - name: Configure dunst...
   ansible.builtin.template:
     src: templates/dunstrc.j2
-    dest: "{{ dunst_directory }}/dunstrc"
+    dest: "{{ dunst_config_directory }}/dunstrc"
     mode: 0664
 
 ...

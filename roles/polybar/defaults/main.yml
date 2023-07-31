@@ -1,10 +1,9 @@
 ---
 
 polybar_home_directory: "{{ polybar_user_home }}"
-
-polybar_directory: "{{ polybar_home_directory }}/.config/polybar"
-polybar_config_directory: "{{ polybar_directory }}/config.d"
-polybar_scripts_directory: "{{ polybar_directory }}/scripts"
+polybar_config_directory: "{{ polybar_home_directory }}/.config/polybar"
+polybar_subconfig_directory: "{{ polybar_config_directory }}/config.d"
+polybar_scripts_directory: "{{ polybar_config_directory }}/scripts"
 
 polybar_color_background: "#88000000"
 polybar_color_background_alt: "#373B41"

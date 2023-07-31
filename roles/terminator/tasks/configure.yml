@@ -1,15 +1,20 @@
 ---
 
+- name: Delete old settings directory
+  ansible.builtin.file:
+    state: absent
+    path: "{{ terminator_config_directory }}"
+
 - name: Create Terminator config directory...
   ansible.builtin.file:
-    path: "{{ terminator_directory }}"
+    path: "{{ terminator_config_directory }}"
     state: directory
     mode: 0755
 
 - name: Configure terminator...
   ansible.builtin.template:
     src: templates/config.j2
-    dest: "{{ terminator_directory }}/config"
+    dest: "{{ terminator_config_directory }}/config"
     mode: 0664
 
 ...

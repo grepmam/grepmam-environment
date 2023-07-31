@@ -3,18 +3,18 @@
 - name: Delete old settings directory
   ansible.builtin.file:
     state: absent
-    path: "{{ neofetch_directory }}"
-
-- name: Create Neofetch config directory...
-  ansible.builtin.file:
     path: "{{ neofetch_config_directory }}"
+
+- name: Create Neofetch subconfig directory...
+  ansible.builtin.file:
+    path: "{{ neofetch_subconfig_directory }}"
     state: directory
     mode: 0755
 
 - name: Create subconfigs...
   ansible.builtin.template:
     src: templates/{{ item }}.j2
-    dest: "{{ neofetch_config_directory }}/{{ item }}"
+    dest: "{{ neofetch_subconfig_directory }}/{{ item }}"
     mode: 0664
   loop:
     - ascii
@@ -44,7 +44,7 @@
 - name: Create Neofetch config...
   ansible.builtin.template:
     src: templates/config.conf.j2
-    dest: "{{ neofetch_directory }}/config.conf"
+    dest: "{{ neofetch_config_directory }}/config.conf"
     mode: 0664
 
 ...
