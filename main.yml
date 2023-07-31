@@ -72,14 +72,16 @@
       ansible.builtin.import_role:
         name: i3
       vars: 
-        i3_user_home: "/home/grepmam"
-        i3_user: "grepmam" 
+        i3_user_home: "{{ user.home }}"
+        i3_user: "{{ user.name }}" 
       tags: i3
 
-    #    - name: Import Neofetch role...
-    #      ansible.builtin.import_role:
-    #        name: neofetch
-    #      tags: neofetch
+    - name: Import Neofetch role...
+      ansible.builtin.import_role:
+        name: neofetch
+      vars:
+        neofetch_user_home: "{{ user.home }}"
+      tags: neofetch
 
     - name: Import ZSH role...
       ansible.builtin.import_role:

@@ -1,0 +1,50 @@
+---
+
+- name: Delete old settings directory
+  ansible.builtin.file:
+    state: absent
+    path: "{{ neofetch_directory }}"
+
+- name: Create Neofetch config directory...
+  ansible.builtin.file:
+    path: "{{ neofetch_config_directory }}"
+    state: directory
+    mode: 0755
+
+- name: Create subconfigs...
+  ansible.builtin.template:
+    src: templates/{{ item }}.j2
+    dest: "{{ neofetch_config_directory }}/{{ item }}"
+    mode: 0664
+  loop:
+    - ascii
+    - color_blocks
+    - cpu
+    - disk
+    - gpu
+    - image
+    - kernel
+    - misc
+    - progress_bars
+    - shell
+    - text_colors
+    - title
+    - backend
+    - desktop_environment
+    - distro
+    - gtk
+    - ip
+    - memory
+    - packages
+    - resolution
+    - song
+    - text_options
+    - uptime
+
+- name: Create Neofetch config...
+  ansible.builtin.template:
+    src: templates/config.conf.j2
+    dest: "{{ neofetch_directory }}/config.conf"
+    mode: 0664
+
+...

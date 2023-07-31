@@ -1,0 +1,9 @@
+---
+
+- name: Install Neofetch...
+  become: true
+  community.general.pacman:
+    name: neofetch
+    state: present
+
+...

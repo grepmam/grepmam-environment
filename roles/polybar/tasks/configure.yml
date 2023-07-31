@@ -11,29 +11,16 @@
     state: directory
     mode: 0755
 
-- name: Create colors config...
+- name: Create subconfigs...
   ansible.builtin.template:
-    src: templates/colors.ini.j2
-    dest: "{{ polybar_config_directory }}/colors.ini"
+    src: templates/{{ item }}.ini.j2
+    dest: "{{ polybar_config_directory }}/{{ item }}.ini"
     mode: 0664
-
-- name: Create bars config...
-  ansible.builtin.template:
-    src: templates/bars.ini.j2
-    dest: "{{ polybar_config_directory }}/bars.ini"
-    mode: 0664
-
-- name: Create modules config...
-  ansible.builtin.template:
-    src: templates/modules.ini.j2
-    dest: "{{ polybar_config_directory }}/modules.ini"
-    mode: 0664
-
-- name: Create user modules config...
-  ansible.builtin.template:
-    src: templates/user_modules.ini.j2
-    dest: "{{ polybar_config_directory }}/user_modules.ini"
-    mode: 0664
+  loop:
+    - colors
+    - bars
+    - modules
+    - user_modules
 
 - name: Create scripts directory...
   ansible.builtin.file:

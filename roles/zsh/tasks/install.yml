@@ -5,7 +5,7 @@
   community.general.pacman:
     name: "{{ item }}"
     state: present
-  with_items:
+  loop:
     - git
     - zsh
     - zsh-autosuggestions

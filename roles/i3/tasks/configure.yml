@@ -11,29 +11,16 @@
     state: directory
     mode: 0755
 
-- name: Configure keybindings...
+- name: Create subconfigs...
   ansible.builtin.template:
-    src: templates/01-keybindings.conf.j2
-    dest: "{{ i3_config_directory }}/01-keybindings.conf"
+    src: templates/{{ item }}.conf.j2
+    dest: "{{ i3_config_directory }}/{{ item }}.conf"
     mode: 0664
-
-- name: Configure window rules...
-  ansible.builtin.template:
-    src: templates/02-window-rules.conf.j2
-    dest: "{{ i3_config_directory }}/02-windows-rules.conf"
-    mode: 0664
-
-- name: Configure apparence...
-  ansible.builtin.template:
-    src: templates/03-apparence.conf.j2
-    dest: "{{ i3_config_directory }}/03-apparence.conf"
-    mode: 0664
-
-- name: Configure custom exec...
-  ansible.builtin.template:
-    src: templates/04-exec.conf.j2
-    dest: "{{ i3_config_directory }}/04-exec.conf"
-    mode: 0664
+  loop:
+    - 01-keybindings
+    - 02-window-rules
+    - 03-apparence
+    - 04-exec
 
 - name: Create i3 config...
   ansible.builtin.template:
