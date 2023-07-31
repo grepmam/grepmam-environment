@@ -1,0 +1,10 @@
+---
+
+lsd_home_directory: "{{ lsd_user_home }}" 
+lsd_directory: "{{ lsd_home_directory }}/.config/lsd"
+
+lsd_color: auto
+lsd_icons: auto
+lsd_icons_theme: fancy
+
+...

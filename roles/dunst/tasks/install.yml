@@ -1,0 +1,9 @@
+---
+
+- name: Install dunst...
+  become: true
+  community.general.pacman:
+    name: dunst
+    state: present
+
+...

@@ -1,5 +1,10 @@
 ---
 
+- name: Delete old settings directory
+  ansible.builtin.file:
+    state: absent
+    path: "{{ i3_config_directory }}"
+
 - name: Create i3 config directory...
   ansible.builtin.file:
     path: "{{ i3_config_directory }}"

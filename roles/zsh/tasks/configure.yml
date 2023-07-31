@@ -2,7 +2,7 @@
 
 - name: Set ZSH as default shell...
   become: true
-  ansible.builtin.command: chsh -s /usr/bin/zsh
+  ansible.builtin.command: chsh -s /usr/bin/zsh {{ zsh_user }}
 
 - name: Download Oh-My-ZSH installer...
   ansible.builtin.get_url:
@@ -14,10 +14,23 @@
   args:
     creates: "{{ zsh_home_directory }}/.oh-my-zsh"
 
+- name: Copy .zsh_aliases to home directory
+  ansible.builtin.copy:
+    src: .zsh_aliases
+    dest: "{{ zsh_home_directory }}"
+    mode: 0755
+
 - name: Configure zshrc...
   ansible.builtin.template:
     src: templates/zshrc.j2
     dest: "{{ zsh_home_directory }}/.zshrc"
     mode: 0664
+
+- name: Clone ZSH Autosuggestions Plugin repository...
+  ansible.builtin.git:
+    repo: 'https://github.com/zsh-users/zsh-autosuggestions'
+    dest: '{{ zsh_plugins_directory }}/zsh-autosuggestions'
+    clone: true
+    force: true
 
 ...

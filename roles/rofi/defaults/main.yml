@@ -1,6 +1,6 @@
 ---
 
-rofi_home_directory: "{{ lookup('env','HOME') }}" 
+rofi_home_directory: "{{ rofi_user_home }}" 
 rofi_directory: "{{ rofi_home_directory }}/.config/rofi"
 
 rofi_icon_theme: "Tela-circle"

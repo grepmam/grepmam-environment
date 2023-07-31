@@ -1,0 +1,34 @@
+---
+
+dunst_home_directory: "{{ dunst_user_home }}" 
+dunst_directory: "{{ dunst_home_directory }}/.config/dunst"
+
+dunst_global_monitor: 0
+dunst_global_follow: mouse
+dunst_global_geometry: 1000x1000-30+20
+dunst_global_indicate_hidden: "yes"
+dunst_global_transparency: 0
+dunst_global_padding: 12
+dunst_global_horizontal_padding: 12
+dunst_global_frame_width: 3
+dunst_global_frame_color: "#83d9b6"
+dunst_global_sort: "yes"
+dunst_global_font: Monospace
+dunst_global_font_size: 9
+dunst_global_line_height: 1
+dunst_global_browser: /usr/bin/firefox
+dunst_global_corner_radius: 20
+
+dunst_urgency_low_background_color: "#222222"
+dunst_urgency_low_foreground_color: "#888888"
+
+dunst_urgency_normal_background_color: "#000000"
+dunst_urgency_normal_foreground_color: "#ffffff"
+
+dunst_urgency_critical_background_color: "#900000"
+dunst_urgency_critical_foreground_color: "#ffffff"
+dunst_urgency_critical_frame_color: "#ff0000"
+
+dunst_urgency_timeout: 10
+
+...

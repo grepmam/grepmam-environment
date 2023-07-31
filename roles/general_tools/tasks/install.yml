@@ -8,5 +8,9 @@
   with_items:
     - bat
     - htop
+    - unzip
+    - firefox
+    - obsidian
+    - keepassxc
 
 ...

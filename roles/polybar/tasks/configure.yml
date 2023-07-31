@@ -1,5 +1,10 @@
 ---
 
+- name: Delete old settings directory
+  ansible.builtin.file:
+    state: absent
+    path: "{{ polybar_directory }}"
+
 - name: Create Polybar config directory...
   ansible.builtin.file:
     path: "{{ polybar_config_directory }}"

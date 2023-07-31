@@ -1,6 +1,6 @@
 ---
 
-polybar_home_directory: "{{ lookup('env','HOME') }}"
+polybar_home_directory: "{{ polybar_user_home }}"
 
 polybar_directory: "{{ polybar_home_directory }}/.config/polybar"
 polybar_config_directory: "{{ polybar_directory }}/config.d"

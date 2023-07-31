@@ -6,7 +6,7 @@
 #                         #
 ###########################
 
-i3_home_directory: "{{ lookup('env','HOME') }}"
+i3_home_directory: "{{ i3_user_home }}"
 
 i3_directory: "{{ i3_home_directory }}/.config/i3"
 i3_config_directory: "{{ i3_directory }}/config.d"

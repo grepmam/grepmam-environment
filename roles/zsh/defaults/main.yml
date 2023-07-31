@@ -1,6 +1,9 @@
 ---
 
-zsh_home_directory: "{{ lookup('env','HOME') }}"
+zsh_home_directory: "{{ zsh_user_home }}"
+zsh_directory: "{{ zsh_home_directory }}/.oh-my-zsh"
+zsh_plugins_directory: "{{ zsh_directory }}/plugins"
+
 zsh_theme: kafeitu
 
 ...

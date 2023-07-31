@@ -1,0 +1,15 @@
+---
+
+- name: Create dunst directory...
+  ansible.builtin.file:
+    path: "{{ dunst_directory }}"
+    state: directory
+    mode: 0755
+
+- name: Configure dunst...
+  ansible.builtin.template:
+    src: templates/dunstrc.j2
+    dest: "{{ dunst_directory }}/dunstrc"
+    mode: 0664
+
+...

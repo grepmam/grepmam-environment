@@ -1,54 +1,99 @@
 ---
 
 - name: Grepmam Environment
-  hosts: localhost_group
+  hosts: personal
   gather_facts: false
 
   tasks:
 
+    - name: Import install task from General Tools Role...
+      ansible.builtin.import_role:
+        name: general_tools
+        tasks_from: install
+      tags: general
+
     - name: Import Fonts role...
       ansible.builtin.import_role:
         name: fonts
+      vars:
+        fonts_user_home: "{{ user.home }}"
       tags: fonts
 
     - name: Import Picom role...
       ansible.builtin.import_role:
         name: picom
+      vars:
+        picom_user_home: "{{ user.home }}"
       tags: picom
 
     - name: Import Polybar role...
       ansible.builtin.import_role:
         name: polybar
+      vars:
+        polybar_user_home: "{{ user.home }}"
       tags: polybar
 
     - name: Import Terminator role...
       ansible.builtin.import_role:
         name: terminator
+      vars:
+        terminator_user_home: "{{ user.home }}"
       tags: terminator
+
+    - name: Import dunst role...
+      ansible.builtin.import_role:
+        name: dunst
+      vars:
+        dunst_user_home: "{{ user.home }}"
+      tags: dunst
 
     - name: Import Flameshot role...
       ansible.builtin.import_role:
         name: flameshot
+      vars:
+        flameshot_user_home: "{{ user.home }}"
       tags: flameshot
 
     - name: Import Rofi role...
       ansible.builtin.import_role:
         name: rofi
+      vars:
+        rofi_user_home: "{{ user.home }}"
       tags: rofi
 
     - name: Import Feh role...
       ansible.builtin.import_role:
         name: feh
+      vars:
+        feh_user_home: "{{ user.home }}"
       tags: feh
 
     - name: Import i3 role...
       ansible.builtin.import_role:
         name: i3
+      vars: 
+        i3_user_home: "/home/grepmam"
+        i3_user: "grepmam" 
       tags: i3
+
+    #    - name: Import Neofetch role...
+    #      ansible.builtin.import_role:
+    #        name: neofetch
+    #      tags: neofetch
 
     - name: Import ZSH role...
       ansible.builtin.import_role:
         name: zsh
+      vars:
+        zsh_user_home: "{{ user.home }}"
+        zsh_user: "{{ user.name }}"
       tags: zsh
+
+    - name: Import LSD role...
+      ansible.builtin.import_role:
+        name: lsd
+      vars:
+        lsd_user_home: "{{ user.home }}"
+      tags: lsd
 
 ...

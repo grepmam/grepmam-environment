@@ -1,0 +1,9 @@
+---
+
+- name: Install LSD - The next gen ls command...
+  become: true
+  community.general.pacman:
+    name: lsd
+    state: present
+
+...

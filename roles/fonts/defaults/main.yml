@@ -1,6 +1,6 @@
 ---
 
-fonts_home_directory: "{{ lookup('env','HOME') }}"
+fonts_home_directory: "{{ fonts_user_home }}"
 
 fonts_directory: "{{ fonts_home_directory }}/.local/share/fonts"
 
