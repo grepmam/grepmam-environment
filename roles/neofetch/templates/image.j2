@@ -10,14 +10,14 @@
 # Values:   'on', 'off'
 # Flag:     --loop
 
-image_loop="off"
+image_loop="{{ neofetch_image_loop }}"
 
 # Thumbnail directory
 #
 # Default: '~/.cache/thumbnails/neofetch'
 # Values:  'dir'
 
-thumbnail_dir="${XDG_CACHE_HOME:-${HOME}/.cache}/thumbnails/neofetch"
+thumbnail_dir="{{ neofetch_image_thumbnail_dir }}"
 
 # Crop mode
 #
@@ -28,7 +28,7 @@ thumbnail_dir="${XDG_CACHE_HOME:-${HOME}/.cache}/thumbnails/neofetch"
 # See this wiki page to learn about the fit and fill options.
 # https://github.com/dylanaraps/neofetch/wiki/What-is-Waifu-Crop%3F
 
-crop_mode="normal"
+crop_mode="{{ neofetch_image_crop_mode }}"
 
 # Crop offset
 # Note: Only affects 'normal' crop mode.
@@ -38,7 +38,7 @@ crop_mode="normal"
 #           'east', 'southwest', 'south', 'southeast'
 # Flag:     --crop_offset
 
-crop_offset="center"
+crop_offset="{{ neofetch_image_crop_offset }}"
 
 # Image size
 # The image is half the terminal width by default.
@@ -48,7 +48,7 @@ crop_offset="center"
 # Flags:   --image_size
 #          --size
 
-image_size="auto"
+image_size="{{ neofetch_image_size }}"
 
 # Gap between image and text
 #
@@ -56,7 +56,7 @@ image_size="auto"
 # Values:  'num', '-num'
 # Flag:    --gap
 
-gap=3
+gap={{ neofetch_image_gap }}
 
 # Image offsets
 # Only works with the w3m backend.
@@ -66,8 +66,8 @@ gap=3
 # Flags:   --xoffset
 #          --yoffset
 
-yoffset=0
-xoffset=0
+yoffset={{ neofetch_image_yoffset }}
+xoffset={{ neofetch_image_xoffset }}
 
 # Image background color
 # Only works with the w3m backend.
@@ -76,4 +76,4 @@ xoffset=0
 # Values:  'color', 'blue'
 # Flag:    --bg_color
 
-background_color=
+background_color={{ neofetch_image_background_color }}

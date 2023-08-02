@@ -25,7 +25,7 @@ block_range=(0 15)
 # Values:   'on', 'off'
 # Flag:     --color_blocks
 
-color_blocks="on"
+color_blocks="{{ neofetch_color_block }}"
 
 # Color block width in spaces
 #
@@ -33,7 +33,7 @@ color_blocks="on"
 # Values:   'num'
 # Flag:     --block_width
 
-block_width=3
+block_width={{ neofetch_color_block_width }}
 
 # Color block height in lines
 #
@@ -41,7 +41,7 @@ block_width=3
 # Values:   'num'
 # Flag:     --block_height
 
-block_height=1
+block_height={{ neofetch_color_block_height }}
 
 # Color Alignment
 #
@@ -56,4 +56,4 @@ block_height=1
 # col_offset="auto" - Default behavior of neofetch
 # col_offset=7      - Leave 7 spaces then print the colors
 
-col_offset="auto"
+col_offset="{{ neofetch_color_block_col_offset }}"

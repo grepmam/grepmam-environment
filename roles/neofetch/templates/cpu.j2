@@ -10,7 +10,7 @@
 # Supports: Linux with 'cpufreq'
 # NOTE: Any file in '/sys/devices/system/cpu/cpu0/cpufreq' can be used as a value.
 
-speed_type="bios_limit"
+speed_type="{{ neofetch_cpu_speed_type }}"
 
 # CPU speed shorthand
 #
@@ -23,7 +23,7 @@ speed_type="bios_limit"
 # on:    'i7-6500U (4) @ 3.1GHz'
 # off:   'i7-6500U (4) @ 3.100GHz'
 
-speed_shorthand="off"
+speed_shorthand="{{ neofetch_cpu_speed_shorthand }}"
 
 # Enable/Disable CPU brand in output.
 #
@@ -35,7 +35,7 @@ speed_shorthand="off"
 # on:   'Intel i7-6500U'
 # off:  'i7-6500U (4)'
 
-cpu_brand="on"
+cpu_brand="{{ neofetch_cpu_brand }}"
 
 # CPU Speed
 # Hide/Show CPU speed.
@@ -48,7 +48,7 @@ cpu_brand="on"
 # on:  'Intel i7-6500U (4) @ 3.1GHz'
 # off: 'Intel i7-6500U (4)'
 
-cpu_speed="on"
+cpu_speed="{{ neofetch_cpu_speed }}"
 
 # CPU Cores
 # Display CPU cores in output
@@ -63,7 +63,7 @@ cpu_speed="on"
 # physical: 'Intel i7-6500U (2) @ 3.1GHz' (All physical cores)
 # off:      'Intel i7-6500U @ 3.1GHz'
 
-cpu_cores="logical"
+cpu_cores="{{ neofetch_cpu_cores }}"
 
 # CPU Temperature
 # Hide/Show CPU temperature.
@@ -81,4 +81,4 @@ cpu_cores="logical"
 # F:   'Intel i7-6500U (4) @ 3.1GHz [82.0°F]'
 # off: 'Intel i7-6500U (4) @ 3.1GHz'
 
-cpu_temp="off"
+cpu_temp="{{ neofetch_cpu_temp }}"

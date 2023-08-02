@@ -1,7 +1,7 @@
 ---
 
 - name: Grepmam Environment
-  hosts: personal
+  hosts: gep
   gather_facts: false
 
   tasks:

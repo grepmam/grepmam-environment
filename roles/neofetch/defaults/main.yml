@@ -4,4 +4,88 @@ neofetch_home_directory: "{{ neofetch_user_home }}"
 neofetch_config_directory: "{{ neofetch_home_directory }}/.config/neofetch"
 neofetch_subconfig_directory: "{{ neofetch_config_directory }}/config.d"
 
+neofetch_gtk_shorthand: off
+neofetch_gtk_gtk2: on
+neofetch_gtk_gtk3: on
+
+neofetch_de_version: on
+
+neofetch_song_music_player: auto
+neofetch_song_format: "%artist% - %album% - %title%"
+neofetch_song_shortland: on
+
+neofetch_ip_public_host: http://ident.me
+neofetch_ip_timeout: 2
+
+neofetch_color_block: on
+neofetch_color_block_width: 3
+neofetch_color_block_height: 1
+neofetch_color_block_col_offset: auto
+
+neofetch_backend_image: ascii
+neofetch_backend_image_source: auto
+
+neofetch_misc_stdout: off
+
+neofetch_gpu_brand: on
+neofetch_gpu_type: all
+
+neofetch_title_fdqn: off
+
+neofetch_memory_percent: off
+neofetch_memory_unit: gib
+
+neofetch_disk_subtitle: mount
+neofetch_disk_percent: on
+
+neofetch_packages_managers: on
+
+neofetch_kernel_shorthand: on
+
+neofetch_image_loop: off
+neofetch_image_thumbnail_dir: ${XDG_CACHE_HOME:-${HOME}/.cache}/thumbnails/neofetch
+neofetch_image_crop_mode: normal
+neofetch_image_crop_offset: center
+neofetch_image_size: auto
+neofetch_image_gap: 3
+neofetch_image_yoffset: 0
+neofetch_image_xoffset: 0
+neofetch_image_background_color: 
+
+neofetch_uptime_shorthand: on
+
+neofetch_progress_bars_bar_char_elapsed: "-"
+neofetch_progress_bars_bar_char_total: "="
+neofetch_progress_bars_bar_border: on
+neofetch_progress_bars_bar_length: 15
+neofetch_progress_bars_bar_color_elapsed: distro
+neofetch_progress_bars_bar_color_total: distro
+neofetch_progress_bars_cpu_display: off
+neofetch_progress_bars_memory_display: off
+neofetch_progress_bars_battery_display: off
+neofetch_progress_bars_disk_display: off
+
+neofetch_resolution_refresh_rate: off
+
+neofetch_cpu_speed_type: bios_limit
+neofetch_cpu_speed_shorthand: off
+neofetch_cpu_brand: on
+neofetch_cpu_speed: on
+neofetch_cpu_cores: logical
+neofetch_cpu_temp: off
+
+neofetch_text_options_bold: on
+neofetch_text_options_underline_enabled: on
+neofetch_text_options_underline_char: "-"
+neofetch_text_options_separator: ':'
+
+neofetch_shell_path: off
+neofetch_shell_version: on
+
+neofetch_ascii_distro: auto
+neofetch_ascii_bold: on
+
+neofetch_distro_shorthand: off
+neofetch_distro_os_arch: 
+
 ...

@@ -8,7 +8,7 @@
 # Values:  'url'
 # Flag:    --ip_host
 
-public_ip_host="http://ident.me"
+public_ip_host="{{ neofetch_ip_public_host }}"
 
 # Public IP timeout.
 #
@@ -16,4 +16,4 @@ public_ip_host="http://ident.me"
 # Values:  'int'
 # Flag:    --ip_timeout
 
-public_ip_timeout=2
+public_ip_timeout={{ neofetch_ip_timeout }}

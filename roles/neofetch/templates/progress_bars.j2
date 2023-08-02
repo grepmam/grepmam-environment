@@ -12,8 +12,8 @@
 # neofetch --bar_char 'elapsed' 'total'
 # neofetch --bar_char '-' '='
 
-bar_char_elapsed="-"
-bar_char_total="="
+bar_char_elapsed="{{ neofetch_progress_bars_bar_char_elapsed }}"
+bar_char_total="{{ neofetch_progress_bars_bar_char_total }}"
 
 # Toggle Bar border
 #
@@ -21,7 +21,7 @@ bar_char_total="="
 # Values:   'on', 'off'
 # Flag:     --bar_border
 
-bar_border="on"
+bar_border="{{ neofetch_progress_bars_bar_border }}"
 
 # Progress bar length in spaces
 # Number of chars long to make the progress bars.
@@ -30,7 +30,7 @@ bar_border="on"
 # Values:   'num'
 # Flag:     --bar_length
 
-bar_length=15
+bar_length={{ neofetch_progress_bars_bar_length }}
 
 # Progress bar colors
 # When set to distro, uses your distro's logo colors.
@@ -43,8 +43,8 @@ bar_length=15
 # neofetch --bar_colors 3 4
 # neofetch --bar_colors distro 5
 
-bar_color_elapsed="distro"
-bar_color_total="distro"
+bar_color_elapsed="{{ neofetch_progress_bars_bar_color_elapsed }}"
+bar_color_total="{{ neofetch_progress_bars_bar_color_total }}"
 
 
 # Info display
@@ -63,7 +63,7 @@ bar_color_total="distro"
 # barinfo: '[---=======] info'
 # off:     'info'
 
-cpu_display="off"
-memory_display="off"
-battery_display="off"
-disk_display="off"
+cpu_display="{{ neofetch_progress_bars_cpu_display }}"
+memory_display="{{ neofetch_progress_bars_memory_display }}"
+battery_display="{{ neofetch_progress_bars_battery_display }}"
+disk_display="{{ neofetch_progress_bars_disk_display }}"

@@ -24,3 +24,14 @@ ansible-playbook main.yml --ask-become-pass
 Once this is done, restart the computer.
 
 *Note: it is assumed that you already have Ansible installed*
+
+## Upcoming features
+
+* fzf
+* nvim
+* xscreensaver
+* LightDM
+
+## Warning
+
+For now this environment is only for Arch Linux. The process for Debian systems will be completed.
