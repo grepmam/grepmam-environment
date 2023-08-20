@@ -2,8 +2,10 @@
 
 - name: Import install.yml tasks...
   ansible.builtin.import_tasks: install.yml
+  tags: terminator_install
 
 - name: Import configure.yml tasks... 
   ansible.builtin.import_tasks: configure.yml
+  tags: terminator_configure
 
 ...

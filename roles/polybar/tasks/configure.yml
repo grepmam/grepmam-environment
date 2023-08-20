@@ -5,12 +5,6 @@
     state: absent
     path: "{{ polybar_config_directory }}"
 
-- name: Create Polybar config directory...
-  ansible.builtin.file:
-    path: "{{ polybar_config_directory }}"
-    state: directory
-    mode: 0755
-
 - name: Create Polybar subconfig directory...
   ansible.builtin.file:
     path: "{{ polybar_subconfig_directory }}"

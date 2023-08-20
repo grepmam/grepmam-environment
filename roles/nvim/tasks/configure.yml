@@ -1,0 +1,17 @@
+---
+
+- name: Delete old settings directory
+  ansible.builtin.file:
+    state: absent
+    path: "{{ nvim_config_directory }}"
+
+- name: Create nvim directories...
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    mode: 0755
+  loop:
+    - "{{ nvim_core_directory }}"
+    - "{{ nvim_plugins_directory }}"
+
+...

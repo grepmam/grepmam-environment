@@ -1,0 +1,10 @@
+---
+
+nvim_home_directory: "{{ nvim_user_home }}"
+nvim_config_directory: "{{ nvim_home_directory }}/.config/nvim"
+
+nvim_lua_directory: "{{ nvim_config_directory }}/lua"
+nvim_core_directory: "{{ nvim_lua_directory }}/config"
+nvim_plugins_directory: "{{ nvim_lua_directory }}/plugins"
+
+...

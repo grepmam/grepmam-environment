@@ -2,7 +2,7 @@
 
 - name: Grepmam Environment
   hosts: gep
-  gather_facts: false
+  gather_facts: true
 
   tasks:
 
@@ -23,6 +23,7 @@
       ansible.builtin.import_role:
         name: picom
       vars:
+        picom_distribution: "{{ os.distribution }}"
         picom_user_home: "{{ user.home }}"
       tags: picom
 
@@ -104,5 +105,12 @@
       vars:
         lsd_user_home: "{{ user.home }}"
       tags: lsd
+
+    - name: Import NVIM role...
+      ansible.builtin.import_role:
+        name: nvim
+      vars:
+        nvim_user_home: "{{ user.home }}"
+      tags: nvim
 
 ...

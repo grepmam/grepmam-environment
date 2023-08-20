@@ -2,8 +2,10 @@
 
 - name: Import install.yml tasks...
   ansible.builtin.import_tasks: install.yml
+  tags: flameshot_install
 
 - name: Import configure.yml tasks... 
   ansible.builtin.import_tasks: configure.yml
+  tags: flameshot_configure
 
 ...

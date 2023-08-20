@@ -2,10 +2,10 @@
 
 - name: Import install.yml tasks...
   ansible.builtin.import_tasks: install.yml
-  tags: lsd_install
+  tags: nvim_install
 
 - name: Import configure.yml tasks... 
   ansible.builtin.import_tasks: configure.yml
-  tags: lsd_configure
+  tags: nvim_configure
 
 ...

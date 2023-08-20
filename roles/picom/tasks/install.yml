@@ -1,9 +1,17 @@
 ---
 
-- name: Install picom...
+- name: Install picom on Arch...
   become: true
   community.general.pacman:
     name: picom
     state: present
+  when: picom_distribution == 'arch'
+
+- name: Install picom on Debian...
+  become: true
+  ansible.builtin.apt:
+    name: picom
+    state: present
+  when: picom_distribution == 'debian'
 
 ...

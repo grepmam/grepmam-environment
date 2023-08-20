@@ -1,0 +1,9 @@
+---
+
+- name: Install NeoVim editor...
+  become: true
+  community.general.pacman:
+    name: neovim
+    state: present
+
+...

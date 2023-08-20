@@ -1,6 +1,6 @@
 ---
 
-- name: Install general tools...
+- name: Install general tools on Arch Linux...
   become: true
   community.general.pacman:
     name: "{{ item }}"
@@ -11,6 +11,6 @@
     - unzip
     - firefox
     - obsidian
-    - keepassxc
+    - keepassxc 
 
 ...

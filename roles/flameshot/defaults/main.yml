@@ -4,6 +4,6 @@ flameshot_home_directory: "{{ flameshot_user_home }}"
 
 flameshot_config_directory: "{{ flameshot_home_directory }}/.config/flameshot"
 flameshot_pictures_directory: "{{ flameshot_home_directory }}/Pictures"
-flameshot_save_folder: "{{ flameshot_pictures_directory }}/screenshots"
+flameshot_save_directory: "{{ flameshot_pictures_directory }}/screenshots"
 
 ...

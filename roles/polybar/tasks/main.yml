@@ -2,8 +2,10 @@
 
 - name: Import install.yml tasks...
   ansible.builtin.import_tasks: install.yml
+  tags: polybar_install
 
 - name: Import configure.yml tasks... 
   ansible.builtin.import_tasks: configure.yml
+  tags: polybar_configure
 
 ...
