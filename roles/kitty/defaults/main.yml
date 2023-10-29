@@ -1,0 +1,119 @@
+---
+
+###########################
+#                         #
+#        General          #
+#                         #
+###########################
+
+kitty_home_directory: "{{ kitty_user_home }}"
+
+kitty_config_directory: "{{ kitty_home_directory }}/.config/kitty"
+kitty_subconfig_directory: "{{ kitty_config_directory }}/config.d"
+
+
+###########################
+#                         #
+#         Fonts           #
+#                         #
+###########################
+
+kitty_fonts_font_family: Source Code Pro
+kitty_fonts_bold_font: auto
+kitty_fonts_italic_font: auto
+kitty_fonts_bold_italic_font: auto
+
+kitty_fonts_size: 10
+
+
+###########################
+#                         #
+#         Cursor          #
+#                         #
+###########################
+
+kitty_cursor_color: #cccccc
+kitty_cursor_text_color: #111111
+
+
+###########################
+#                         #
+#       Scrollback        #
+#                         #
+###########################
+
+kitty_scrollback_lines: 2000
+
+
+###########################
+#                         #
+#          Mouse          #
+#                         #
+###########################
+
+kitty_mouse_hide_wait: 3.0
+
+
+###########################
+#                         #
+#     Terminal Bell       #
+#                         #
+###########################
+
+kitty_terminal_bell_enable_audio: no
+kitty_terminal_bell_on_tab: no
+
+
+###########################
+#                         #
+#     Window Layout       #
+#                         #
+###########################
+
+kitty_window_layout_border_width: 0.5pt
+kitty_window_layout_margin_width: 2
+kitty_window_layout_padding_width: 10
+kitty_window_layout_active_border_color: #83d9b6
+kitty_window_layout_inactive_border_color: #03663e
+
+
+###########################
+#                         #
+#         Tab Bar         #
+#                         #
+###########################
+
+kitty_tab_bar_edge: bottom
+
+kitty_tab_bar_active_tab_foreground: #000000
+kitty_tab_bar_active_tab_background: #83d9b6
+kitty_tab_bar_active_font_style: bold
+kitty_tab_bar_inactive_tab_foreground: #444444 
+kitty_tab_bar_inactive_tab_background: #999999
+kitty_tab_bar_inactive_font_style: bold
+
+
+###########################
+#                         #
+#       Color Scheme      #
+#                         #
+###########################
+
+kitty_color_scheme_foreground: #000000
+kitty_color_scheme_background: #83d9b6
+
+kitty_color_scheme_background_opacity: 0.8
+
+kitty_color_scheme_selection_background: #83d9b6
+kitty_color_scheme_selection_foreground: #000000
+
+
+###########################
+#                         #
+#         Keyboard        #
+#                         #
+###########################
+
+kitty_keyboard_leader: ctrl+shift
+
+...

@@ -1,0 +1,40 @@
+---
+
+- name: Delete old settings directory
+  ansible.builtin.file:
+    state: absent
+    path: "{{ kitty_config_directory }}"
+
+- name: Create Kitty subconfig directory...
+  ansible.builtin.file:
+    path: "{{ kitty_subconfig_directory }}"
+    state: directory
+    mode: 0755
+
+- name: Create subconfigs...
+  ansible.builtin.template:
+    src: templates/{{ item }}.conf.j2
+    dest: "{{ kitty_subconfig_directory }}/{{ item }}.conf"
+    mode: 0664
+  loop:
+    - 01-fonts
+    - 02-cursor-customization
+    - 03-scrollback
+    - 04-mouse
+    - 05-performance-tuning
+    - 06-terminal-bell
+    - 07-window-layout
+    - 08-tab-bar
+    - 09-color-scheme
+    - 10-advanced
+    - 11-os-specific-tweaks
+    - 12-keyboard-shortcuts
+    - 13-layout
+
+- name: Create Kitty config...
+  ansible.builtin.template:
+    src: templates/kitty.conf.j2
+    dest: "{{ kitty_config_directory }}/kitty.conf"
+    mode: 0664
+
+...

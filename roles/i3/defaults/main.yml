@@ -99,15 +99,12 @@ i3_keybinding_custom_group:
     - name: feh
       post_key: b
       command: "bash $HOME/.fehbg"
-    - name: locker
-      post_key: l
-      command: "light-locker-command --lock"
     - name: flameshot
       post_key: u
       command: "flameshot gui"
     - name: terminal
       post_key: Return
-      command: "terminator"
+      command: "kitty"
     - name: poweroff
       post_key: Shift+o
       command: "poweroff"
@@ -160,8 +157,6 @@ i3_exec_group:
       command: "bash $HOME/.fehbg"
     - name: picom
       command: "picom --config ~/.config/picom/picom.conf -b"
-    - name: locker
-      command: "/usr/bin/light-locker"
     - name: mpv
       command: "mpv --no-video ~/.startup_sounds/linux-mint-sound.mp3"
     - name: polybar script
@@ -177,6 +172,6 @@ i3_exec_group:
 i3_window_rules_group:
   windows:
     - firefox
-    - Terminator
+    - kitty
 
 ...

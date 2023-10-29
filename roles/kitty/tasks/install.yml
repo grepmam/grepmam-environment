@@ -1,9 +1,9 @@
 ---
 
-- name: Install picom on Arch...
+- name: Install Kitty Terminal...
   become: true
   community.general.pacman:
-    name: picom
+    name: kitty
     state: present
 
 ...

@@ -41,6 +41,13 @@
         terminator_user_home: "{{ user.home }}"
       tags: terminator
 
+    - name: Import Kitty role...
+      ansible.builtin.import_role:
+        name: kitty
+      vars:
+        kitty_user_home: "{{ user.home }}"
+      tags: kitty
+
     - name: Import dunst role...
       ansible.builtin.import_role:
         name: dunst

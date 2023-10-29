@@ -2,10 +2,10 @@
 
 - name: Import install.yml tasks...
   ansible.builtin.import_tasks: install.yml
-  tags: i3_install
+  tags: kitty_install
 
 - name: Import configure.yml tasks... 
   ansible.builtin.import_tasks: configure.yml
-  tags: i3_configure
+  tags: kitty_configure
 
 ...
