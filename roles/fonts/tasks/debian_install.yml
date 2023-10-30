@@ -1,0 +1,14 @@
+---
+
+- name: Install Font Awesome...
+  become: true
+  ansible.builtin.apt:
+    name: fonts-font-awesome
+    state: present
+
+- name: Download NerdFonts
+  ansible.builtin.get_url:
+    url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/3270.zip 
+    dest: /tmp/nerd_fonts.zip
+
+...

@@ -1,0 +1,9 @@
+---
+
+- name: Install Neofetch...
+  become: true
+  ansible.builtin.apt:
+    name: neofetch
+    state: present
+
+...

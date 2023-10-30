@@ -16,8 +16,8 @@
 
 - name: Copy .zsh_aliases to home directory
   ansible.builtin.copy:
-    src: .zsh_aliases
-    dest: "{{ zsh_home_directory }}"
+    src: .zsh_aliases_{{ ansible_os_family | lower }}
+    dest: "{{ zsh_home_directory }}/.zsh_aliases"
     mode: 0755
 
 - name: Configure zshrc...

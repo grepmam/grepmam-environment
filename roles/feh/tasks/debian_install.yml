@@ -1,0 +1,9 @@
+---
+
+- name: Install Feh...
+  become: true
+  ansible.builtin.apt:
+    name: feh
+    state: present
+
+...

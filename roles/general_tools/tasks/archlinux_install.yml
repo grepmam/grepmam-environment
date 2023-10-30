@@ -1,16 +1,20 @@
 ---
 
-- name: Install general tools on Arch Linux...
+- name: Install general tools...
   become: true
   community.general.pacman:
     name: "{{ item }}"
     state: present
   loop:
+    - git
     - bat
     - htop
     - unzip
     - firefox
     - obsidian
-    - keepassxc 
+    - keepassxc
+    - curl
+    - gcc
+    - make
 
 ...

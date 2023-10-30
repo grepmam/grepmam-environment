@@ -114,6 +114,6 @@ kitty_color_scheme_selection_foreground: #000000
 #                         #
 ###########################
 
-kitty_keyboard_leader: ctrl+shift
+kitty_keyboard_leader: ctrl+alt
 
 ...

@@ -7,9 +7,9 @@
   tasks:
 
     - name: Import install task from General Tools Role...
-      ansible.builtin.import_role:
+      ansible.builtin.include_role:
         name: general_tools
-        tasks_from: install
+        tasks_from: "{{ ansible_os_family | lower }}_install.yml"
       tags: general
 
     - name: Import Fonts role...
@@ -23,7 +23,6 @@
       ansible.builtin.import_role:
         name: picom
       vars:
-        picom_distribution: "{{ os.distribution }}"
         picom_user_home: "{{ user.home }}"
       tags: picom
 

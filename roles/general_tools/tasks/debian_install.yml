@@ -1,0 +1,19 @@
+---
+
+- name: Install general tools...
+  become: true
+  ansible.builtin.apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - git
+    - bat
+    - htop
+    - unzip
+    - firefox
+    - keepassxc
+    - curl
+    - gcc
+    - make
+
+...

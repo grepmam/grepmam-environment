@@ -1,0 +1,9 @@
+---
+
+- name: Install Polybar...
+  become: true
+  ansible.builtin.apt:
+    name: polybar
+    state: present
+
+...

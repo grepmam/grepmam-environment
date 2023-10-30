@@ -2,11 +2,10 @@
 
 - name: Install ZSH...
   become: true
-  community.general.pacman:
+  ansible.builtin.apt:
     name: "{{ item }}"
     state: present
   loop:
-    - git
     - zsh
     - zsh-autosuggestions
 

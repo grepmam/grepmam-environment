@@ -1,7 +1,7 @@
 ---
 
-- name: Import install.yml tasks...
-  ansible.builtin.import_tasks: install.yml
+- name: Include install tasks...
+  ansible.builtin.include_tasks: "{{ ansible_os_family | lower }}_install.yml"
   tags: lsd_install
 
 - name: Import configure.yml tasks... 

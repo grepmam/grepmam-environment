@@ -1,0 +1,13 @@
+---
+
+- name: Install i3 environment...
+  become: true
+  ansible.builtin.apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - i3-wm
+    - i3blocks
+    - i3status
+
+...

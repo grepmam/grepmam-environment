@@ -28,7 +28,7 @@
     state: directory
     mode: 0755
 
-- name: Copy scripts to Polybar Scripts directory
+- name: Copy scripts to Polybar Scripts directory...
   ansible.builtin.copy:
     src: scripts/dollar.sh
     dest: "{{ polybar_scripts_directory }}"
@@ -40,10 +40,10 @@
     dest: "{{ polybar_config_directory }}/config.ini"
     mode: 0664
 
-- name: Copy launch.sh to Polybar directory
-  ansible.builtin.copy:
-    src: launch.sh
-    dest: "{{ polybar_config_directory }}"
+- name: Copy launch.sh to Polybar directory...
+  ansible.builtin.template:
+    src: templates/launch.sh.j2
+    dest: "{{ polybar_config_directory }}/launch.sh"
     mode: 0755
 
 ...

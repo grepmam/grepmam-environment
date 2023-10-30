@@ -1,6 +1,6 @@
 ---
 
-- name: Install picom on Arch...
+- name: Install picom...
   become: true
   community.general.pacman:
     name: picom
