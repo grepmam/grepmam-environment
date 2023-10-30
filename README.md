@@ -34,4 +34,4 @@ Once this is done, restart the computer.
 
 ## Warning
 
-For now this environment is only for Arch Linux. The process for Debian systems will be completed.
+The environment is only for Arch Linux and Debian families.
