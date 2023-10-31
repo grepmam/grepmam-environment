@@ -50,6 +50,8 @@ i3_keybinding_workspace_group:
     - "Browser "
     - "Terminal "
     - "Virtual "
+    - "Notes "
+    - "Chat "
     - "Random "
 
 # --- Focus ---
@@ -173,5 +175,8 @@ i3_window_rules_group:
   windows:
     - firefox
     - kitty
+    - VirtualBox Manager
+    - obsidian
+    - discord
 
 ...

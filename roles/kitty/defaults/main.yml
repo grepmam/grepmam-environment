@@ -32,8 +32,8 @@ kitty_fonts_size: 10
 #                         #
 ###########################
 
-kitty_cursor_color: #cccccc
-kitty_cursor_text_color: #111111
+kitty_cursor_color: "#cccccc"
+kitty_cursor_text_color: "#111111"
 
 
 ###########################
@@ -73,8 +73,8 @@ kitty_terminal_bell_on_tab: no
 kitty_window_layout_border_width: 0.5pt
 kitty_window_layout_margin_width: 2
 kitty_window_layout_padding_width: 10
-kitty_window_layout_active_border_color: #83d9b6
-kitty_window_layout_inactive_border_color: #03663e
+kitty_window_layout_active_border_color: "#83d9b6"
+kitty_window_layout_inactive_border_color: "#03663e"
 
 
 ###########################
@@ -85,11 +85,11 @@ kitty_window_layout_inactive_border_color: #03663e
 
 kitty_tab_bar_edge: bottom
 
-kitty_tab_bar_active_tab_foreground: #000000
-kitty_tab_bar_active_tab_background: #83d9b6
+kitty_tab_bar_active_tab_foreground: "#000000"
+kitty_tab_bar_active_tab_background: "#83d9b6"
 kitty_tab_bar_active_font_style: bold
-kitty_tab_bar_inactive_tab_foreground: #444444 
-kitty_tab_bar_inactive_tab_background: #999999
+kitty_tab_bar_inactive_tab_foreground: "#444444" 
+kitty_tab_bar_inactive_tab_background: "#999999"
 kitty_tab_bar_inactive_font_style: bold
 
 
@@ -99,13 +99,13 @@ kitty_tab_bar_inactive_font_style: bold
 #                         #
 ###########################
 
-kitty_color_scheme_foreground: #000000
-kitty_color_scheme_background: #83d9b6
+kitty_color_scheme_foreground: "#83d9b6"
+kitty_color_scheme_background: "#000000"
 
 kitty_color_scheme_background_opacity: 0.8
 
-kitty_color_scheme_selection_background: #83d9b6
-kitty_color_scheme_selection_foreground: #000000
+kitty_color_scheme_selection_background: "#83d9b6"
+kitty_color_scheme_selection_foreground: "#000000"
 
 
 ###########################
