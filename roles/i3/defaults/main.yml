@@ -97,7 +97,7 @@ i3_keybinding_custom_group:
   custom:
     - name: rofi
       post_key: d
-      command: "rofi -config ~/.config/rofi/config.rasi -theme Monokai -show drun"
+      command: "rofi -config ~/.config/rofi/config.rasi -theme custom -show drun"
     - name: feh
       post_key: b
       command: "bash $HOME/.fehbg"

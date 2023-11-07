@@ -1,0 +1,87 @@
+* {
+    font: "{{ rofi_theme_general_font }} {{ rofi_theme_general_font_size }}";
+
+    c1: {{ rofi_theme_general_color_1 }};
+    c2: {{ rofi_theme_general_color_2 }};
+    c3: {{ rofi_theme_general_color_3 }};
+
+    background-color: transparent;
+    text-color: @c1;
+
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+}
+
+window {
+    background-color: @c2;
+    background-opacity: rgb(0, 0, 0, 0.8);
+    location: center;
+    width: {{ rofi_theme_window_width }};
+    border-radius: {{ rofi_theme_window_border_radius }};
+    border-color: @c3;
+}
+
+inputbar {
+    font: "{{ rofi_theme_inputbar_font }} {{ rofi_theme_inputbar_font_size }}";
+    padding: 12px;
+    spacing: 12px;
+    children: [ icon-search, entry ];
+}
+
+icon-search {
+    expand: false;
+    filename: "search";
+    size: 28px;
+}
+
+icon-search, entry, element-icon, element-text {
+    vertical-align: 0.5;
+}
+
+entry {
+    font: inherit;
+    placeholder: "Search";
+    placeholder-color: @c1;
+}
+
+message {
+    border: 2px 0 0;
+    border-color: @c1;
+    background-color: @c2;
+}
+
+textbox {
+    padding: 8px 24px;
+}
+
+listview {
+    lines: 10;
+    columns: 1;
+    fixed-height: false;
+    border: 1px 0 0;
+    border-color: @c1;
+}
+
+element {
+    padding: 8px 16px;
+    spacing: 16px;
+    background-color: transparent;
+}
+
+element normal active {
+    text-color: @c1;
+}
+
+element selected normal, element selected active {
+    background-color: @c2;
+    text-color: @c1;
+}
+
+element-icon {
+    size: {{ rofi_theme_element_icon_size }};
+}
+
+element-text {
+    text-color: inherit;
+}

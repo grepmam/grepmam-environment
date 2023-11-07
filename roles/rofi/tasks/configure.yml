@@ -17,4 +17,16 @@
     dest: "{{ rofi_config_directory }}/config.rasi"
     mode: 0664
 
+- name: Create Rofi themes directory...
+  ansible.builtin.file:
+    path: "{{ rofi_themes_directory }}"
+    state: directory
+    mode: 0755
+
+- name: Customizing theme...
+  ansible.builtin.template:
+    src: templates/custom.rasi.j2
+    dest: "{{ rofi_themes_directory }}/custom.rasi"
+    mode: 0664
+
 ...
