@@ -15,10 +15,13 @@ rofi_theme_general_font: "Monserrat"
 rofi_theme_general_font_size: 10
 
 rofi_theme_window_width: 700
+rofi_theme_window_border: 2px
 rofi_theme_window_border_radius: 8
 
 rofi_theme_inputbar_font: "Monserrat"
 rofi_theme_inputbar_font_size: 12
+
+rofi_theme_listview_border_bottom: 2px 
 
 rofi_theme_element_icon_size: 1.6em
 
