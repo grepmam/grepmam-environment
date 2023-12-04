@@ -5,7 +5,7 @@
     state: absent
     path: "{{ i3_config_directory }}"
 
-- name: Create i3 subconfig directory...
+- name: Create i3 config directory...
   ansible.builtin.file:
     path: "{{ i3_subconfig_directory }}"
     state: directory

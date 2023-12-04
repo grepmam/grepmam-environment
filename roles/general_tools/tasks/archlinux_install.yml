@@ -16,5 +16,6 @@
     - curl
     - gcc
     - make
+  tags: general_tools_install, install
 
 ...

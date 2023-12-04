@@ -106,7 +106,7 @@ i3_keybinding_custom_group:
       command: "flameshot gui"
     - name: terminal
       post_key: Return
-      command: "kitty"
+      command: "wezterm"
     - name: poweroff
       post_key: Shift+o
       command: "poweroff"
@@ -174,7 +174,7 @@ i3_exec_group:
 i3_window_rules_group:
   windows:
     - firefox
-    - kitty
+    - wezterm
     - VirtualBox Manager
     - obsidian
     - discord

@@ -2,10 +2,10 @@
 
 - name: Include install tasks...
   ansible.builtin.include_tasks: "{{ ansible_os_family | lower }}_install.yml"
-  tags: i3_install
+  tags: i3_install, install
 
 - name: Import configure.yml tasks... 
   ansible.builtin.import_tasks: configure.yml
-  tags: i3_configure
+  tags: i3_configure, configure
 
 ...

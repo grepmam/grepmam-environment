@@ -2,10 +2,10 @@
 
 - name: Include install tasks...
   ansible.builtin.include_tasks: "{{ ansible_os_family | lower }}_install.yml"
-  tags: polybar_install
+  tags: polybar_install, install
 
 - name: Import configure.yml tasks... 
   ansible.builtin.import_tasks: configure.yml
-  tags: polybar_configure
+  tags: polybar_configure, configure
 
 ...

@@ -2,10 +2,10 @@
 
 - name: Include install tasks...
   ansible.builtin.include_tasks: "{{ ansible_os_family | lower }}_install.yml"
-  tags: terminator_install
+  tags: terminator_install, install
 
 - name: Import configure.yml tasks... 
   ansible.builtin.import_tasks: configure.yml
-  tags: terminator_configure
+  tags: terminator_configure, configure
 
 ...

@@ -9,5 +9,6 @@
     - i3-wm
     - i3blocks
     - i3status
+  tags: i3_install, install
 
 ...

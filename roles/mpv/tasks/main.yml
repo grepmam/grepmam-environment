@@ -2,10 +2,10 @@
 
 - name: Include install tasks...
   ansible.builtin.include_tasks: "{{ ansible_os_family | lower }}_install.yml"
-  tags: mpv_install
+  tags: mpv_install, install
 
 - name: Import configure.yml tasks... 
   ansible.builtin.import_tasks: configure.yml
-  tags: mpv_configure
+  tags: mpv_configure, configure
 
 ...

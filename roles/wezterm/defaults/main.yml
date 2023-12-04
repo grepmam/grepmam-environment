@@ -1,0 +1,67 @@
+---
+
+###########################
+#                         #
+#        General          #
+#                         #
+###########################
+
+wezterm_home_directory: "{{ wezterm_user_home }}"
+wezterm_config_directory: "{{ wezterm_home_directory }}/.config/wezterm"
+
+# --- All ---
+
+wezterm_general_tab_bar_at_bottom: 'true'
+wezterm_general_hide_tab_bar_if_only_one_tab: 'false'
+wezterm_general_fancy_tab_bar: 'true'
+
+wezterm_general_window_frame_active_titlebar_bg: '#000000'
+
+wezterm_general_window_padding_left: 25
+wezterm_general_window_padding_right: 25
+wezterm_general_window_padding_top: 25
+wezterm_general_window_padding_bottom: 25
+
+# --- Colors ---
+
+wezterm_colors_foreground: '#83d9b6'
+wezterm_colors_selection_fg: '#000000'
+wezterm_colors_selection_bg: '#83d9b6'
+
+wezterm_colors_tb_active_fg: '#000000'
+wezterm_colors_tb_active_bg: '#83d9b6'
+wezterm_colors_tb_active_intensity: 'Bold'
+wezterm_colors_tb_active_underline: 'None'
+wezterm_colors_tb_active_italic: 'false'
+wezterm_colors_tb_active_strikethrough: 'false'
+
+wezterm_colors_tb_inactive_fg: '#000000'
+wezterm_colors_tb_inactive_bg: '#03663e'
+
+# --- Keybindings ---
+
+wezterm_keys_copy_mode_key: x
+wezterm_keys_copy_mode_mods: CTRL|ALT
+
+wezterm_keys_split_vertical_key: v
+wezterm_keys_split_vertical_mods: CTRL|ALT
+
+wezterm_keys_split_horizontal_key: h
+wezterm_keys_split_horizontal_mods: CTRL|ALT
+
+wezterm_keys_previous_tab_key: LeftArrow
+wezterm_keys_previous_tab_mods: CTRL|ALT
+
+wezterm_keys_next_tab_key: RightArrow
+wezterm_keys_next_tab_mods: CTRL|ALT
+
+wezterm_keys_move_tab_left_key: ","
+wezterm_keys_move_tab_left_mods: CTRL|ALT
+
+wezterm_keys_move_tab_right_key: "."
+wezterm_keys_move_tab_right_mods: CTRL|ALT
+
+wezterm_keys_set_tab_title_key: t
+wezterm_keys_set_tab_title_mods: CTRL|ALT
+
+...

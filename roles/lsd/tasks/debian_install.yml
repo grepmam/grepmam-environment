@@ -5,17 +5,21 @@
     url: https://static.rust-lang.org/rustup/dist/x86_64-unknown-linux-gnu/rustup-init
     dest: /tmp/rustup-init
     mode: 0755
+  tags: lsd_install, install
 
 - name: Install Rust
   ansible.builtin.shell: /tmp/rustup-init -y
+  tags: lsd_install, install
 
 - name: Install Cargo...
   become: true
   ansible.builtin.apt:
     name: cargo
     state: present
+  tags: lsd_install, install
 
 - name: Install LSD package
-  ansible.builtin.shell: cargo install lsd 
+  ansible.builtin.shell: cargo install lsd
+  tags: lsd_install, install
 
 ...

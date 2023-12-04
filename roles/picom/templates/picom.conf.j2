@@ -101,6 +101,15 @@ focus-exclude = [ "class_g = 'Cairo-clock'" ];
 # Use fixed inactive dim value, instead of adjusting according to window opacity.
 # inactive-dim-fixed = 1.0
 
+{% set opacity_rule = [] %}
+
+{% for item in picom_transparency_apps.apps %}
+   {% set _ = opacity_rule.append("\"" ~ item.opacity ~ ":class_g = '" ~ item.instance ~ "'\"") %}
+{% endfor %}
+
+opacity_rule = [
+    {{ opacity_rule|join(",\n ") }}
+];
 
 {% if picom_blurring %}
 

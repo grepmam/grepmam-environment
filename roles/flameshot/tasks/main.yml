@@ -2,10 +2,10 @@
 
 - name: Include install tasks...
   ansible.builtin.include_tasks: "{{ ansible_os_family | lower }}_install.yml"
-  tags: flameshot_install
+  tags: flameshot_install, install
 
 - name: Import configure.yml tasks... 
   ansible.builtin.import_tasks: configure.yml
-  tags: flameshot_configure
+  tags: flameshot_configure, configure
 
 ...

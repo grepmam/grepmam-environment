@@ -1,0 +1,23 @@
+---
+
+- name: Downloading LibSSL...
+  ansible.builtin.get_url:
+    url: http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+    dest: /tmp/libssl.deb
+  tags: wezterm_install, install
+
+- name: Downloading Wezterm...
+  ansible.builtin.get_url:
+    url: https://github.com/wez/wezterm/releases/download/20230712-072601-f4abf8fd/wezterm-20230712-072601-f4abf8fd.Ubuntu20.04.deb
+    dest: /tmp/wezterm.deb
+  tags: wezterm_install, install
+
+- name: Installing dependencies and Wezterm...
+  become: true
+  ansible.builtin.apt:
+    deb: /tmp/{{ item }}.deb
+  loop:
+    - libssl
+    - wezterm
+
+...

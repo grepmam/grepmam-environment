@@ -5,10 +5,12 @@
   community.general.pacman:
     name: ttf-font-awesome
     state: present
+  tags: fonts_install, install
 
 - name: Download NerdFonts
   ansible.builtin.get_url:
     url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/3270.zip 
     dest: /tmp/nerd_fonts.zip
+  tags: fonts_install, install
 
 ...

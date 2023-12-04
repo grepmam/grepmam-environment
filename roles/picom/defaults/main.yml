@@ -16,6 +16,12 @@ picom_fading_out_step: 0.03
 picom_fading_delta: 10
 picom_fading_no_openclose: "false"
 
+picom_transparency_apps:
+  apps:
+    - name: wezterm
+      instance: org.wezfurlong.wezterm
+      opacity: 80
+
 picom_transparency_inactive_opacity: 1
 picom_transparency_frame_opacity: 0.7
 picom_transparency_menu_opacity: 1.0
@@ -23,13 +29,13 @@ picom_transparency_inactive_opacity_override: "false"
 picom_transparency_active_opacity: 1.0
 picom_transparency_inactive_dim: 0.0
 
-picom_blurring: true # May not work in some environments
+picom_blurring: false # May not work in some environments
 picom_blurring_method: dual_kawase
 picom_blurring_size: 12
 picom_blurring_kern: 3x3box
 
-picom_general_backend: glx #xrender
-picom_general_vsync: "true"
+picom_general_backend: xrender # vbox: xrender; general: glx
+picom_general_vsync: "false" # vbox: false; general: true
 picom_general_mark_wmwin_focused: "true"
 picom_general_mark_ovredir_focused: "true"
 picom_general_detect_rounded_corners: "true"

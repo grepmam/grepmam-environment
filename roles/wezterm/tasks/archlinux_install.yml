@@ -1,0 +1,15 @@
+---
+
+- name: Clone Wezterm repository...
+  ansible.builtin.git:
+    repo: 'https://aur.archlinux.org/wezterm-git.git'
+    dest: '/tmp/wezterm'
+    clone: true
+    force: true
+  tags: wezterm_install, install
+
+- name: Building package...
+  ansible.builtin.command: makepkg -csi --check
+  tags: wezterm_install, install
+
+...

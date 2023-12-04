@@ -1,20 +1,44 @@
 ---
 
+- name: Create Font Type directory...
+  ansible.builtin.file:
+    path: "{{ fonts_directory }}/{{ item }}"
+    state: directory
+  loop:
+    - otf
+    - ttf
+
+- name: Create Font Awesome 6 directory...
+  ansible.builtin.file:
+    path: "{{ fonts_directory }}/otf/FontAwesome6"
+    state: directory
+    mode: 0755
+
+- name: Copy Font Awesome 6...
+  ansible.builtin.copy:
+    src: /tmp/fontawesome.zip
+    dest: "{{ fonts_directory }}/otf/FontAwesome6"
+
+- name: Extract Font Awesome 6...
+  ansible.builtin.unarchive:
+    src: "{{ fonts_directory }}/otf/FontAwesome6/fontawesome.zip"
+    dest: "{{ fonts_directory }}/otf/FontAwesome6/"
+
 - name: Create Nerd Fonts directory...
   ansible.builtin.file:
-    path: "{{ fonts_directory }}/nerd_fonts"
+    path: "{{ fonts_directory }}/ttf/NerdFonts"
     state: directory
     mode: 0755
 
 - name: Copy Nerd Fonts...
   ansible.builtin.copy:
     src: /tmp/nerd_fonts.zip
-    dest: "{{ fonts_directory }}/nerd_fonts"
+    dest: "{{ fonts_directory }}/ttf/NerdFonts"
 
 - name: Extract Nerd Fonts...
   ansible.builtin.unarchive:
-    src: "{{ fonts_directory }}/nerd_fonts/nerd_fonts.zip"
-    dest: "{{ fonts_directory }}/nerd_fonts/"
+    src: "{{ fonts_directory }}/ttf/NerdFonts/nerd_fonts.zip"
+    dest: "{{ fonts_directory }}/ttf/NerdFonts/"
 
 - name: Update font cache...
   ansible.builtin.command: fc-cache -f -v

@@ -1,0 +1,119 @@
+local wezterm = require('wezterm')
+local config = {}
+
+if wezterm.config_builder then
+  config = wezterm.config_builder()
+end
+
+
+-- ===== GENERAL =====
+
+config.tab_bar_at_bottom = {{ wezterm_general_tab_bar_at_bottom }}
+config.hide_tab_bar_if_only_one_tab = {{ wezterm_general_hide_tab_bar_if_only_one_tab }}
+
+config.use_fancy_tab_bar = {{ wezterm_general_fancy_tab_bar }}
+
+config.window_frame = {}
+config.window_frame.active_titlebar_bg = '{{ wezterm_general_window_frame_active_titlebar_bg }}'
+
+config.window_padding = {}
+config.window_padding.left = {{ wezterm_general_window_padding_left }}
+config.window_padding.right = {{ wezterm_general_window_padding_right }}
+config.window_padding.top = {{ wezterm_general_window_padding_top }}
+config.window_padding.bottom = {{ wezterm_general_window_padding_bottom }}
+
+
+-- ===== COLORS =====
+
+config.colors = {}
+
+config.colors.foreground = '{{ wezterm_colors_foreground }}'
+config.colors.selection_fg = '{{ wezterm_colors_selection_fg }}'
+config.colors.selection_bg = '{{ wezterm_colors_selection_bg }}'
+
+-- Tab Bar
+
+config.colors.tab_bar = {}
+
+config.colors.tab_bar.active_tab = {}
+config.colors.tab_bar.active_tab.fg_color = '{{ wezterm_colors_tb_active_fg }}'
+config.colors.tab_bar.active_tab.bg_color = '{{ wezterm_colors_tb_active_bg }}'
+config.colors.tab_bar.active_tab.intensity = '{{ wezterm_colors_tb_active_intensity }}'
+config.colors.tab_bar.active_tab.underline = '{{ wezterm_colors_tb_active_underline }}'
+config.colors.tab_bar.active_tab.italic = {{ wezterm_colors_tb_active_italic }}
+config.colors.tab_bar.active_tab.strikethrough = {{ wezterm_colors_tb_active_strikethrough }}
+
+config.colors.tab_bar.inactive_tab = {}
+config.colors.tab_bar.inactive_tab.fg_color = '{{ wezterm_colors_tb_inactive_fg }}'
+config.colors.tab_bar.inactive_tab.bg_color = '{{ wezterm_colors_tb_inactive_bg }}'
+
+
+-- ===== KEYS =====
+
+config.keys = {}
+
+-- GENERAL
+
+local copy_mode = {}
+copy_mode.key = '{{ wezterm_keys_copy_mode_key }}'
+copy_mode.mods = '{{ wezterm_keys_copy_mode_mods }}'
+copy_mode.action = wezterm.action.ActivateCopyMode
+table.insert(config.keys, copy_mode)
+
+
+-- SPLIT WINDOW
+
+local split_vertical = {}
+split_vertical.key = '{{ wezterm_keys_split_vertical_key }}'
+split_vertical.mods = '{{ wezterm_keys_split_vertical_mods }}'
+split_vertical.action = wezterm.action.SplitVertical({ domain = 'CurrentPaneDomain' })
+table.insert(config.keys, split_vertical)
+
+local split_horizontal = {}
+split_horizontal.key = '{{ wezterm_keys_split_horizontal_key }}'
+split_horizontal.mods = '{{ wezterm_keys_split_horizontal_mods }}'
+split_horizontal.action = wezterm.action.SplitHorizontal({ domain = 'CurrentPaneDomain' })
+table.insert(config.keys, split_horizontal)
+
+
+-- TABS
+
+local previous_tab = {}
+previous_tab.key = '{{ wezterm_keys_previous_tab_key }}'
+previous_tab.mods = '{{ wezterm_keys_previous_tab_mods }}'
+previous_tab.action = wezterm.action.ActivateTabRelative(-1)
+table.insert(config.keys, previous_tab)
+
+local next_tab = {}
+next_tab.key = '{{ wezterm_keys_next_tab_key }}'
+next_tab.mods = '{{ wezterm_keys_next_tab_mods }}'
+next_tab.action = wezterm.action.ActivateTabRelative(1)
+table.insert(config.keys, next_tab)
+
+local move_tab_left = {}
+move_tab_left.key = '{{ wezterm_keys_move_tab_left_key }}'
+move_tab_left.mods = '{{ wezterm_keys_move_tab_left_mods }}'
+move_tab_left.action = wezterm.action.MoveTabRelative(-1)
+table.insert(config.keys, move_tab_left)
+
+local move_tab_right = {}
+move_tab_right.key = '{{ wezterm_keys_move_tab_right_key }}'
+move_tab_right.mods = '{{ wezterm_keys_move_tab_right_mods }}'
+move_tab_right.action = wezterm.action.MoveTabRelative(1)
+table.insert(config.keys, move_tab_right)
+
+local set_tab_title = {}
+set_tab_title.key = '{{ wezterm_keys_set_tab_title_key }}'
+set_tab_title.mods = '{{ wezterm_keys_set_tab_title_mods }}'
+set_tab_title.action = wezterm.action.PromptInputLine({
+    description='Enter new name for tab',
+    action = wezterm.action_callback(function(window, pane, line)
+        if line then
+            window:active_tab():set_title(line)
+        end
+    end),
+})
+table.insert(config.keys, set_tab_title)
+
+
+return config

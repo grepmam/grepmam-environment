@@ -5,5 +5,6 @@
   community.general.pacman:
     name: terminator
     state: present
+  tags: terminator_install, install
 
 ...

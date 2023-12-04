@@ -1,0 +1,20 @@
+---
+
+- name: Delete old settings directory
+  ansible.builtin.file:
+    state: absent
+    path: "{{ wezterm_config_directory }}"
+
+- name: Create Wezterm config directory...
+  ansible.builtin.file:
+    path: "{{ wezterm_config_directory }}"
+    state: directory
+    mode: 0755
+
+- name: Create Wezterm config...
+  ansible.builtin.template:
+    src: templates/wezterm.lua.j2
+    dest: "{{ wezterm_config_directory }}/wezterm.lua"
+    mode: 0664
+
+...

@@ -7,9 +7,8 @@
   tasks:
 
     - name: Import install task from General Tools Role...
-      ansible.builtin.include_role:
+      ansible.builtin.import_role:
         name: general_tools
-        tasks_from: "{{ ansible_os_family | lower }}_install.yml"
       tags: general
 
     - name: Import Fonts role...
@@ -33,19 +32,26 @@
         polybar_user_home: "{{ user.home }}"
       tags: polybar
 
-    - name: Import Terminator role...
-      ansible.builtin.import_role:
-        name: terminator
-      vars:
-        terminator_user_home: "{{ user.home }}"
-      tags: terminator
+    #- name: Import Terminator role...
+    #  ansible.builtin.import_role:
+    #    name: terminator
+    #  vars:
+    #    terminator_user_home: "{{ user.home }}"
+    #  tags: terminator
 
-    - name: Import Kitty role...
+    #- name: Import Kitty role...
+    #  ansible.builtin.import_role:
+    #    name: kitty
+    #  vars:
+    #    kitty_user_home: "{{ user.home }}"
+    #  tags: kitty
+
+    - name: Import Wezterm role...
       ansible.builtin.import_role:
-        name: kitty
+        name: wezterm
       vars:
-        kitty_user_home: "{{ user.home }}"
-      tags: kitty
+        wezterm_user_home: "{{ user.home }}"
+      tags: wezterm
 
     - name: Import dunst role...
       ansible.builtin.import_role:
