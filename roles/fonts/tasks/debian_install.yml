@@ -6,6 +6,30 @@
     dest: /tmp/fontawesome.zip
   tags: fonts_install, install
 
+- name: Create Font Type directory...
+  ansible.builtin.file:
+    path: "{{ fonts_directory }}/{{ item }}"
+    state: directory
+  loop:
+    - otf
+    - ttf
+
+- name: Create Font Awesome 6 directory...
+  ansible.builtin.file:
+    path: "{{ fonts_directory }}/otf/FontAwesome6"
+    state: directory
+    mode: 0755
+
+- name: Copy Font Awesome 6...
+  ansible.builtin.copy:
+    src: /tmp/fontawesome.zip
+    dest: "{{ fonts_directory }}/otf/FontAwesome6"
+
+- name: Extract Font Awesome 6...
+  ansible.builtin.unarchive:
+    src: "{{ fonts_directory }}/otf/FontAwesome6/fontawesome.zip"
+    dest: "{{ fonts_directory }}/otf/FontAwesome6/"
+
 - name: Download NerdFonts
   ansible.builtin.get_url:
     url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/3270.zip 
