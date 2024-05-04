@@ -14,7 +14,7 @@
 }
 
 window {
-    background-color: rgb(0, 0, 0, 0.2);
+    background-color: rgb(0, 0, 0, 0.9);
     location: center;
     width: {{ rofi_theme_window_width }};
     border: {{ rofi_theme_window_border }} solid;
@@ -58,7 +58,7 @@ textbox {
 listview {
     lines: 10;
     columns: 1;
-    fixed-height: false;
+    fixed-height: 0;
     border: {{ rofi_theme_listview_border_bottom }} 0 0 0;
     border-color: @c1;
 }
