@@ -16,6 +16,11 @@
     - curl
     - gcc
     - make
+    - mypaint
+    - discord
+    - timeshift
+    - arandr
+    - gedit
   tags: general_tools_install, install
 
 ...
