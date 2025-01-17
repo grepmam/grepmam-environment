@@ -2,6 +2,6 @@
 
 feh_home_directory: "{{ feh_user_home }}"
 feh_wallpapers_directory: "{{ feh_home_directory }}/.wallpapers"
-feh_background_image: cyberpunk3.jpg
+feh_background_image: "{{ feh_theme }}.jpg"
 
 ...

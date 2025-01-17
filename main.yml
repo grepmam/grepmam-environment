@@ -1,17 +1,17 @@
 ---
 
 - name: Grepmam Environment
-  hosts: gep
+  hosts: computer_group
   gather_facts: true
 
   tasks:
 
-    - name: Import install task from General Tools Role...
+    - name: Import General Tools Role...
       ansible.builtin.import_role:
         name: general_tools
       tags: general
 
-    - name: Import Fonts role...
+    - name: Import Fonts Role...
       ansible.builtin.import_role:
         name: fonts
       vars:
@@ -30,27 +30,15 @@
         name: polybar
       vars:
         polybar_user_home: "{{ user.home }}"
+        polybar_theme: "{{ theme }}"
       tags: polybar
-
-    #- name: Import Terminator role...
-    #  ansible.builtin.import_role:
-    #    name: terminator
-    #  vars:
-    #    terminator_user_home: "{{ user.home }}"
-    #  tags: terminator
-
-    #- name: Import Kitty role...
-    #  ansible.builtin.import_role:
-    #    name: kitty
-    #  vars:
-    #    kitty_user_home: "{{ user.home }}"
-    #  tags: kitty
 
     - name: Import Wezterm role...
       ansible.builtin.import_role:
         name: wezterm
       vars:
         wezterm_user_home: "{{ user.home }}"
+        wezterm_theme: "{{ theme }}"
       tags: wezterm
 
     - name: Import dunst role...
@@ -58,6 +46,7 @@
         name: dunst
       vars:
         dunst_user_home: "{{ user.home }}"
+        dunst_theme: "{{ theme }}"
       tags: dunst
 
     - name: Import Flameshot role...
@@ -72,6 +61,7 @@
         name: rofi
       vars:
         rofi_user_home: "{{ user.home }}"
+        rofi_theme: "{{ theme }}"
       tags: rofi
 
     - name: Import Feh role...
@@ -79,8 +69,9 @@
         name: feh
       vars:
         feh_user_home: "{{ user.home }}"
+        feh_theme: "{{ theme }}"
       tags: feh
-
+  
     - name: Import mpv role...
       ansible.builtin.import_role:
         name: mpv
@@ -88,12 +79,20 @@
         mpv_user_home: "{{ user.home }}"
       tags: mpv
 
+    #- name: Import LightDM role...
+    #  ansible.builtin.import_role:
+    #    name: lightdm
+    #  vars:
+    #    lightdm_user_home: "{{ user.home }}"
+    #  tags: lightdm
+
     - name: Import i3 role...
       ansible.builtin.import_role:
         name: i3
       vars: 
         i3_user_home: "{{ user.home }}"
-        i3_user: "{{ user.name }}" 
+        i3_user: "{{ user.name }}"
+        i3_theme: "{{ theme }}"
       tags: i3
 
     - name: Import Neofetch role...
@@ -116,13 +115,7 @@
         name: lsd
       vars:
         lsd_user_home: "{{ user.home }}"
+        lsd_theme: "{{ theme }}"
       tags: lsd
-
-    - name: Import NVIM role...
-      ansible.builtin.import_role:
-        name: nvim
-      vars:
-        nvim_user_home: "{{ user.home }}"
-      tags: nvim
 
 ...

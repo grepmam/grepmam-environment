@@ -1,3 +1,2 @@
 alias ls="lsd"
-alias cat="bat"
-alias vim="nvim"
+alias cat="bat -pp"

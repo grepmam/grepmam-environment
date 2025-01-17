@@ -1,7 +1,15 @@
 ---
 
 fonts_home_directory: "{{ fonts_user_home }}"
-
 fonts_directory: "{{ fonts_home_directory }}/.local/share/fonts"
+
+fonts_box:
+  - name: FontAwesome6
+    url: "https://use.fontawesome.com/releases/v6.7.2/fontawesome-free-6.7.2-desktop.zip"
+    dest_dir: "{{ fonts_directory }}/otf/FontAwesome6"
+
+  - name: HackNerdFont
+    url: "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Hack.zip"
+    dest_dir: "{{ fonts_directory }}/ttf/HackNerdFont"
 
 ...

@@ -1,23 +1,36 @@
 ---
+# FALTA PROBAR
 
-- name: Downloading LibSSL...
+- name: Download WezTerm GPG key...
   ansible.builtin.get_url:
-    url: http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
-    dest: /tmp/libssl.deb
-  tags: wezterm_install, install
+    url: https://apt.fury.io/wez/gpg.key
+    dest: /tmp/wezterm.gpg
+    mode: 0644
 
-- name: Downloading Wezterm...
-  ansible.builtin.get_url:
-    url: https://github.com/wez/wezterm/releases/download/20230712-072601-f4abf8fd/wezterm-20230712-072601-f4abf8fd.Ubuntu20.04.deb
-    dest: /tmp/wezterm.deb
-  tags: wezterm_install, install
+- name: Convert GPG key to keyring format...
+  ansible.builtin.command: "gpg --yes --dearmor -o /etc/apt/keyrings/wezterm-fury.gpg /tmp/wezterm.gpg"
+  creates: /etc/apt/keyrings/wezterm-fury.gpg
 
-- name: Installing dependencies and Wezterm...
+- name: Adding WezTerm repository to APT sources archive...
+  ansible.builtin.lineinfile:
+    path: /etc/apt/sources.list.d/wezterm.list
+    line: 'deb [signed-by=/etc/apt/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *'
+    create: yes
+
+- name: Clear GPG key temp file...
+  ansible.builtin.file:
+    path: /tmp/wezterm.gpg
+    state: absent
+
+- name: Update APT package index...
+  ansible.builtin.apt:
+    update_cache: yes
+
+- name: Install Wezterm...
   become: true
   ansible.builtin.apt:
-    deb: /tmp/{{ item }}.deb
-  loop:
-    - libssl
-    - wezterm
+    name: wezterm
+    state: present
+  tags: terminator_install, install
 
 ...

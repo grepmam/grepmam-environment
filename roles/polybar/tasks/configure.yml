@@ -1,5 +1,9 @@
 ---
 
+- name: Include theme vars...
+  ansible.builtin.include_vars:
+    file: "themes/{{ polybar_theme }}.yml"
+
 - name: Delete old settings directory
   ansible.builtin.file:
     state: absent
@@ -30,9 +34,12 @@
 
 - name: Copy scripts to Polybar Scripts directory...
   ansible.builtin.copy:
-    src: scripts/dollar.sh
+    src: scripts/{{ item }}_dollar.sh
     dest: "{{ polybar_scripts_directory }}"
     mode: 0755
+  loop:
+    - blue
+    - mep
 
 - name: Create Polybar config...
   ansible.builtin.template:

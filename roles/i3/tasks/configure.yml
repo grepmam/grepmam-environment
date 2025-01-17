@@ -1,5 +1,9 @@
 ---
 
+- name: Include theme vars...
+  ansible.builtin.include_vars:
+    file: "themes/{{ i3_theme }}.yml"
+
 - name: Delete old settings directory
   ansible.builtin.file:
     state: absent

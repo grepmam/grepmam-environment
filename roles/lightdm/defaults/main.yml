@@ -1,0 +1,11 @@
+---
+
+lightdm_config_directory: /etc/lightdm
+
+lightdm_custom_background_directory: /usr/share/backgrounds/custom
+lightdm_custom_background_image: backgrounds/satoko.jpg
+
+lightdm_pixmaps_directory: /usr/share/pixmaps
+lightdm_custom_profile_picture: profile_pictures/bernkastel1.jpeg
+
+...

@@ -17,4 +17,22 @@
     dest: "{{ picom_config_directory }}/picom.conf"
     mode: 0664
 
+- name: Create Picom config directory...
+  ansible.builtin.file:
+    path: "{{ picom_subconfig_directory }}"
+    state: directory
+    mode: 0755
+
+- name: Create subconfigs...
+  ansible.builtin.template:
+    src: templates/{{ item }}.conf.j2
+    dest: "{{ picom_subconfig_directory }}/{{ item }}.conf"
+    mode: 0664
+  loop:
+    - shadows
+    - fading
+    - transparency_opacity
+    - background_blurring
+    - general
+
 ...

@@ -7,10 +7,6 @@ rofi_themes_directory: "{{ rofi_config_directory }}/themes"
 rofi_icon_theme: "Tela-circle"
 rofi_show_icons: "true"
 
-rofi_theme_general_color_1: "#83d9b6"
-rofi_theme_general_color_2: "#000000"
-rofi_theme_general_color_3: "#ffffff"
-
 rofi_theme_general_font: "Monserrat"
 rofi_theme_general_font_size: 10
 

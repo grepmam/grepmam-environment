@@ -1,27 +1,27 @@
 [bar/top]
 
-width = 100%
-height = 20pt
-radius = 6
+width = {{ polybar_bars_top_width }}
+height = {{ polybar_bars_top_height }}
+radius = {{ polybar_bars_top_radius }}
 monitor = ${env:MONITOR:}
 bottom = false
 background = ${colors.background}
 foreground = ${colors.foreground}
 line-size = 3pt
 
-border-size = 4pt
-border-color = #00000000
+border-size = {{ polybar_bars_top_border_size }}
+border-color = ${colors.padding}
 
 padding-left = 0
 padding-right = 1
 
 module-margin = 1
 
-separator = | 
+separator = {{ polybar_bars_top_separator }} 
 separator-foreground = ${colors.disabled}
 
-modules-left = xworkspaces xwindow
-modules-right = dollar-today wlan eth date
+modules-left = {{ polybar_bars_top_modules_left }}
+modules-right = {{ polybar_bars_top_modules_right }}
 
 font-0 = monospace:size=8;2
 font-1 = Font Awesome 6 Free:pixelsize=8;2
@@ -36,25 +36,25 @@ enable-ipc = true
 
 [bar/bottom]
 
-width = 100%
-height = 20pt
-radius = 6
+width = {{ polybar_bars_bottom_width }}
+height = {{ polybar_bars_bottom_height }}
+radius = {{ polybar_bars_bottom_radius }}
 monitor = ${env:MONITOR:}
 bottom = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 line-size = 3pt
 
-border-size = 4pt
-border-color = #00000000
+border-size = {{ polybar_bars_bottom_border_size }}
+border-color = ${colors.padding}
 
 padding-left = 0
 padding-right = 1
 
 module-margin = 1
-modules-right = backlight filesystem alsa xkeyboard memory cpu 
+modules-right = {{ polybar_bars_bottom_modules_right }} 
 
-separator = | 
+separator = {{ polybar_bars_bottom_separator }} 
 separator-foreground = ${colors.disabled}
 
 font-0 = monospace:size=8;2

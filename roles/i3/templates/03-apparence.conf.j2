@@ -1,3 +1,25 @@
-client.focused          {{ i3_client_focused_border }} {{ i3_client_focused_background }} {{ i3_client_focused_text }} {{ i3_client_focused_indicator }}
-client.focused_inactive {{ i3_client_focused_inactive_border }} {{ i3_client_focused_inactive_background }} {{ i3_client_focused_inactive_text }} {{ i3_client_focused_inactive_indicator }}
-client.unfocused        {{ i3_client_unfocused_border }} {{ i3_client_unfocused_inactive_background }} {{ i3_client_unfocused_inactive_text }} {{ i3_client_unfocused_inactive_indicator }}
+set $focused_border     {{ i3_color_schema.focused_border }}
+set $focused_background {{ i3_color_schema.focused_background }}
+set $focused_text       {{ i3_color_schema.focused_text }}
+set $focused_indicator  {{ i3_color_schema.focused_indicator }}
+
+set $focused_inactive_border     {{ i3_color_schema.focused_inactive_border }}
+set $focused_inactive_background {{ i3_color_schema.focused_inactive_background }}
+set $focused_inactive_text       {{ i3_color_schema.focused_inactive_text }}
+set $focused_inactive_indicator  {{ i3_color_schema.focused_inactive_indicator }}
+
+set $unfocused_border              {{ i3_color_schema.unfocused_border }}
+set $unfocused_inactive_background {{ i3_color_schema.unfocused_inactive_background }}
+set $unfocused_inactive_text       {{ i3_color_schema.unfocused_inactive_text }}
+set $unfocused_inactive_indicator  {{ i3_color_schema.unfocused_inactive_indicator }}
+
+set $urgent_border     {{ i3_color_schema.urgent_border }}
+set $urgent_background {{ i3_color_schema.urgent_background }}
+set $urgent_text       {{ i3_color_schema.urgent_text }}
+set $urgent_indicator  {{ i3_color_schema.urgent_indicator }}
+
+
+client.focused          $focused_border $focused_background $focused_text $focused_indicator
+client.focused_inactive $focused_inactive_border $focused_inactive_background $focused_inactive_text $focused_inactive_indicator
+client.unfocused        $unfocused_border $unfocused_inactive_background $unfocused_inactive_text $unfocused_inactive_indicator
+client.urgent           $urgent_border $urgent_background $urgent_text $urgent_indicator

@@ -1,5 +1,9 @@
 ---
 
+- name: Include theme vars...
+  ansible.builtin.include_vars:
+    file: "themes/{{ lsd_theme }}.yml"
+
 - name: Delete old settings directory
   ansible.builtin.file:
     state: absent
@@ -15,6 +19,12 @@
   ansible.builtin.template:
     src: templates/config.yaml.j2
     dest: "{{ lsd_config_directory }}/config.yaml"
+    mode: 0664
+
+- name: Configure LSD Colors...
+  ansible.builtin.template:
+    src: templates/colors.yaml.j2
+    dest: "{{ lsd_config_directory }}/colors.yaml"
     mode: 0664
 
 ...

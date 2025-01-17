@@ -1,0 +1,45 @@
+---
+
+- name: Configure greeter-session en lightdm.conf
+  ansible.builtin.lineinfile:
+    path: "{{ lightdm_config_directory }}/lightdm.conf"
+    regexp: '^greeter-session\s*='
+    line: 'greeter-session = lightdm-webkit2-greeter'
+    state: present
+    backup: yes
+
+- name: Configurar webkit-theme en lightdm-webkit2-greeter.conf
+  ansible.builtin.lineinfile:
+    path: "{{ lightdm_config_directory }}/lightdm-webkit2-greeter.conf"
+    regexp: '^webkit_theme\s*='
+    line: 'webkit-theme = litarvan'
+    state: present
+    backup: yes
+
+- name: Create custom background directory...
+  ansible.builtin.file:
+    path: "{{ lightdm_custom_background_directory }}"
+    state: directory
+    mode: 0755
+
+- name: Copy custom background to background directory...
+  ansible.builtin.copy:
+    src: "{{ lightdm_custom_background_image }}"
+    dest: "{{ lightdm_custom_background_directory }}"
+    mode: 0644
+
+- name: Copy profile picture to pixmap directory...
+  ansible.builtin.copy:
+    src: "{{ lightdm_custom_profile_picture }}"
+    dest: "{{ lightdm_pixmaps_directory }}"
+    mode: 0644
+
+- name: Configurar profile picture en lightdm-webkit2-greeter.conf
+  ansible.builtin.lineinfile:
+    path: "{{ lightdm_config_directory }}/lightdm-webkit2-greeter.conf"
+    regexp: '^webkit_theme\s*='
+    line: 'webkit-theme = litarvan'
+    state: present
+    backup: yes
+
+...

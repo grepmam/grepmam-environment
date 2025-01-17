@@ -1,0 +1,72 @@
+---
+
+colors:
+  primary: "#83d9b6"
+  secondary: "#000000"
+  tertiary: "#ffffff"
+  info: "#3c84b1"
+  warning: "#ada437"
+  danger: "#c40202"
+  inactive: "#03663e"
+  disabled: "#707880"
+
+polybar_color_scheme:
+  background: "#88000000"
+  background_alt: "#373B41"
+  foreground: "{{ colors.primary }}"
+  foreground_alt: ""
+  primary: "{{ colors.primary }}"
+  secondary: "{{ colors.secondary }}"
+  alert: "{{ colors.danger }}"
+  disabled: "{{ colors.disabled }}"
+  icon: "#fff700"
+  padding: "#00000000"
+
+wezterm_color_scheme:
+  foreground: "{{ colors.primary }}"
+  selection_fg: "{{ colors.secondary }}"
+  selection_bg: "{{ colors.primary }}"
+  tab_active_fg: "{{ colors.secondary }}"
+  tab_active_bg: "{{ colors.primary }}"
+  tab_inactive_fg: "{{ colors.secondary }}"
+  tab_inactive_bg: "{{ colors.inactive }}"
+  active_titlebar_bg: "{{ colors.secondary }}"
+
+dunst_color_scheme:
+  global_frame: "{{ colors.primary }}"
+  urgency_low_background: "#222222" 
+  urgency_low_foreground: "#888888"
+  urgency_normal_background: "{{ colors.secondary }}"
+  urgency_normal_foreground: "{{ colors.tertiary }}"
+  urgency_critical_background: "{{ colors.danger }}"
+  urgency_critical_foreground: "{{ colors.tertiary }}"
+  urgency_critical_frame: "{{ colors.primary }}"
+
+rofi_color_schema:
+  primary: "{{ colors.primary }}"
+  secondary: "{{ colors.secondary }}"
+  tertiary: "{{ colors.tertiary }}"
+
+i3_color_schema:
+  focused_border: "{{ colors.primary }}"
+  focused_background: "{{ colors.primary }}"
+  focused_text: "{{ colors.primary }}"
+  focused_indicator: "{{ colors.primary }}"
+  focused_inactive_border: "{{ colors.inactive }}"
+  focused_inactive_background: "{{ colors.inactive }}"
+  focused_inactive_text: "{{ colors.inactive }}"
+  focused_inactive_indicator: "{{ colors.inactive }}"
+  unfocused_border: "{{ colors.inactive }}"
+  unfocused_inactive_background: "{{ colors.inactive }}"
+  unfocused_inactive_text: "#fdf6e3"
+  unfocused_inactive_indicator: "{{ colors.inactive }}"
+  urgent_border: "{{ colors.danger }}"
+  urgent_background: "{{ colors.danger }}"
+  urgent_text: "{{ colors.danger }}"
+  urgent_indicator: "{{ colors.danger }}"
+
+# Due to LSD don't support hex colors: https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg
+lsd_color_schema:
+  primary: "85"
+
+...

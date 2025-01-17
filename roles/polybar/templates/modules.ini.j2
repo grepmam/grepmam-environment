@@ -1,9 +1,9 @@
 [module/xworkspaces]
 
 type = internal/xworkspaces
-
 label-active = %name%
-label-active-background = ${colors.background-alt}
+label-active-foreground = ${colors.primary}
+label-active-background = ${colors.background}
 label-active-underline= ${colors.primary}
 label-active-padding = 1
 label-occupied = %name%
@@ -19,7 +19,6 @@ label-empty-padding = 1
 [module/xwindow]
 
 type = internal/xwindow
-
 label = %title:0:30:...%
 
 
@@ -28,77 +27,52 @@ label = %title:0:30:...%
 type = internal/fs
 interval = 25
 mount-0 = /
-
-label-mounted = %{F{{ polybar_color_icon }}}%mountpoint%%{F-} %percentage_used%%
-label-unmounted = %mountpoint% not mounted
+format-mounted-prefix = "Root /: "
+format-mounted-prefix-foreground = ${colors.icon}
+format-mounted = <label-mounted>
+format-mounted-foreground = ${colors.primary}
+label-mounted = %percentage_used%%
+format-unmounted-prefix = "Root /: "
+format-unmounted-prefix-foreground = ${colors.icon}
+format-unmounted = <label-unmounted>
+format-unmounted-foreground = ${colors.primary}
+label-unmounted = not mounted
 label-unmounted-foreground = ${colors.disabled}
 
 
 [module/pulseaudio]
 
 type = internal/pulseaudio
-
-format-volume-prefix = "%{F{{ polybar_color_icon }}} %{F-}"
-format-volume-prefix-foreground = ${colors.primary}
+format-volume-prefix = " "
+format-volume-prefix-foreground = ${colors.icon}
 format-volume = <label-volume>
-
+format-volume-foreground = ${colors.primary}
 label-volume = %percentage%%
 label-muted = muted
 label-muted-foreground = ${colors.disabled}
-
-
-[module/alsa]
-
-type = internal/alsa
-
-format-volume = <label-volume> <bar-volume>
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
-format-volume-prefix = "%{F{{ polybar_color_icon }}} %{F-}" 
-
-label-volume = %percentage%%
-label-volume-foreground = ${root.foreground}
-label-muted = sound muted
-
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
 
 
 [module/xkeyboard]
 
 type = internal/xkeyboard
 blacklist-0 = num lock
-
+format-layout = <label-layout>
+format-layout-foreground = ${colors.primary}
 label-layout = %layout%
-label-layout-foreground = ${colors.primary}
 label-indicator-padding = 2
 label-indicator-margin = 1
-label-indicator-foreground = ${colors.background}
-label-indicator-background = ${colors.secondary}
+label-indicator-foreground = ${colors.secondary}
+label-indicator-background = ${colors.primary}
 
 
 [module/memory]
 
 type = internal/memory
 interval = 2
-
-format-prefix = "%{F{{ polybar_color_icon }}}%{F-} RAM "
-format-prefix-foreground = ${colors.primary}
-
+format-prefix = " "
+format-prefix-foreground = ${colors.icon}
+format = RAM <label>
+format-foreground = ${colors.primary}
 label = %percentage_used:2%%
 
 
@@ -106,10 +80,10 @@ label = %percentage_used:2%%
 
 type = internal/cpu
 interval = 2
-
-format-prefix = "%{F{{ polybar_color_icon }}}%{F-} CPU "
-format-prefix-foreground = ${colors.primary}
-
+format-prefix = " "
+format-prefix-foreground = ${colors.icon}
+format = CPU <label>
+format-foreground = ${colors.primary}
 label = %percentage:2%%
 
 
@@ -117,37 +91,57 @@ label = %percentage:2%%
 
 type = internal/network
 interval = 5
-
 format-connected = <label-connected>
+format-connected-foreground = ${colors.primary}
 format-disconnected = <label-disconnected>
-
-label-disconnected = %{F{{ polybar_color_icon }}}%{F{{ polybar_color_disabled }}} disconnected
+format-disconnected-foreground = ${colors.disabled}
+label-disconnected = disconnected
 
 
 [module/wlan]
 
 inherit = network-base
 interface-type = wireless
-
-label-connected = %{F{{ polybar_color_icon }}}%{F-} %essid% %local_ip%
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.icon}
+label-connected = %essid% %local_ip%
+format-disconnected-prefix = " "
+format-disconnected-prefix-foreground = ${colors.icon}
 
 
 [module/eth]
 
 inherit = network-base
 interface-type = wired
-
-label-connected = %{F{{ polybar_color_icon }}}%{F-} %local_ip%
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.icon}
+label-connected = %local_ip%
+format-disconnected-prefix = " "
+format-disconnected-prefix-foreground = ${colors.icon}
 
 
 [module/date]
 
 type = internal/date
 interval = 1
-date =  %Y-%m-%d  %H:%M:%S
-
+date = %Y-%m-%d
+format-prefix = " "
+format-prefix-foreground = ${colors.icon}
+format = <label>
+format-foreground = ${colors.primary}
 label = %date%
-label-foreground = ${colors.primary}
+
+
+[module/time]
+
+type = internal/date
+interval = 1
+time = %H:%M:%S
+format-prefix = " "
+format-prefix-foreground = ${colors.icon}
+format = <label>
+format-foreground = ${colors.primary}
+label = %time%
 
 
 [module/backlight]
@@ -156,10 +150,10 @@ type = internal/backlight
 card = intel_backlight
 use-actual-brightness = true
 enable-scroll = true
-
+format-prefix = " "
+format-prefix-foreground = ${colors.icon} 
 format = <label>
-
-label = %{F{{ polybar_color_icon }}}%{F-} %percentage%%
+label = %percentage%%
 
 
 [settings]

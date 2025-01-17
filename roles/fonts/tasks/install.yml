@@ -1,0 +1,32 @@
+---
+
+- name: Ensure font type directories exist...
+  ansible.builtin.file:
+    path: "{{ fonts_directory }}/{{ item }}"
+    state: directory
+    mode: 0755
+  loop:
+    - otf
+    - ttf
+
+- name: Ensure font directories exist...
+  ansible.builtin.file:
+    path: "{{ item.dest_dir }}"
+    state: directory
+    mode: 0755
+  loop: "{{ fonts_box }}"
+
+- name: Download font archives...
+  ansible.builtin.get_url:
+    url: "{{ item.url }}"
+    dest: "/tmp/{{ item.name }}.zip"
+    mode: 0644
+  loop: "{{ fonts_box }}"
+
+- name: Extract font archives...
+  ansible.builtin.unarchive:
+    src: "/tmp/{{ item.name }}.zip"
+    dest: "{{ item.dest_dir }}"
+  loop: "{{ fonts_box }}"
+
+...

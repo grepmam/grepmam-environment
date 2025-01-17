@@ -1,6 +1,8 @@
 <p align="center">
-    <img width="450" src="/media/logo.png">
+    <img width="280" src="/media/logo.png">
 </p>
+
+## Description
 
 Welcome to the repository for configuring my Linux environment using Ansible! Here you will find all the files and scripts needed to quickly deploy my custom desktop based on i3, picom, polybar and other essential tools.
 
@@ -18,7 +20,7 @@ You will have to change your name in **inventories/host_vars/localhost.yml**.
 To begin the installation, do the following:
 
 ```bash
-ansible-playbook main.yml --ask-become-pass
+ansible-playbook --limit <host> main.yml --ask-become-pass
 ```
 
 Once this is done, restart the computer.
@@ -28,7 +30,7 @@ Once this is done, restart the computer.
 ## Upcoming features
 
 * fzf
-* nvim
+* vim
 * xscreensaver
 * LightDM
 

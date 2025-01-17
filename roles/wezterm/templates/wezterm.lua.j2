@@ -14,7 +14,7 @@ config.hide_tab_bar_if_only_one_tab = {{ wezterm_general_hide_tab_bar_if_only_on
 config.use_fancy_tab_bar = {{ wezterm_general_fancy_tab_bar }}
 
 config.window_frame = {}
-config.window_frame.active_titlebar_bg = '{{ wezterm_general_window_frame_active_titlebar_bg }}'
+config.window_frame.active_titlebar_bg = '{{ wezterm_color_scheme.active_titlebar_bg }}'
 
 config.window_padding = {}
 config.window_padding.left = {{ wezterm_general_window_padding_left }}
@@ -27,25 +27,25 @@ config.window_padding.bottom = {{ wezterm_general_window_padding_bottom }}
 
 config.colors = {}
 
-config.colors.foreground = '{{ wezterm_colors_foreground }}'
-config.colors.selection_fg = '{{ wezterm_colors_selection_fg }}'
-config.colors.selection_bg = '{{ wezterm_colors_selection_bg }}'
+config.colors.foreground = '{{ wezterm_color_scheme.foreground }}'
+config.colors.selection_fg = '{{ wezterm_color_scheme.selection_fg }}'
+config.colors.selection_bg = '{{ wezterm_color_scheme.selection_bg }}'
 
 -- Tab Bar
 
 config.colors.tab_bar = {}
 
 config.colors.tab_bar.active_tab = {}
-config.colors.tab_bar.active_tab.fg_color = '{{ wezterm_colors_tb_active_fg }}'
-config.colors.tab_bar.active_tab.bg_color = '{{ wezterm_colors_tb_active_bg }}'
+config.colors.tab_bar.active_tab.fg_color = '{{ wezterm_color_scheme.tab_active_fg }}'
+config.colors.tab_bar.active_tab.bg_color = '{{ wezterm_color_scheme.tab_active_bg }}'
 config.colors.tab_bar.active_tab.intensity = '{{ wezterm_colors_tb_active_intensity }}'
 config.colors.tab_bar.active_tab.underline = '{{ wezterm_colors_tb_active_underline }}'
 config.colors.tab_bar.active_tab.italic = {{ wezterm_colors_tb_active_italic }}
 config.colors.tab_bar.active_tab.strikethrough = {{ wezterm_colors_tb_active_strikethrough }}
 
 config.colors.tab_bar.inactive_tab = {}
-config.colors.tab_bar.inactive_tab.fg_color = '{{ wezterm_colors_tb_inactive_fg }}'
-config.colors.tab_bar.inactive_tab.bg_color = '{{ wezterm_colors_tb_inactive_bg }}'
+config.colors.tab_bar.inactive_tab.fg_color = '{{ wezterm_color_scheme.tab_inactive_fg }}'
+config.colors.tab_bar.inactive_tab.bg_color = '{{ wezterm_color_scheme.tab_inactive_bg }}'
 
 
 -- ===== KEYS =====

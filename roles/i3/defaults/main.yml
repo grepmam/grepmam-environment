@@ -114,39 +114,6 @@ i3_keybinding_custom_group:
 
 ###########################
 #                         #
-#         Colors          #
-#                         #
-###########################
-
-i3_color_default_1: '#83d9b6'
-i3_color_default_2: '#03663e'
-i3_color_default_3: '#fdf6e3'
-
-
-###########################
-#                         #
-#         Borders         #
-#                         #
-###########################
-
-i3_client_focused_border: "{{ i3_color_default_1 }}"
-i3_client_focused_background: "{{ i3_color_default_1 }}"
-i3_client_focused_text: "{{ i3_color_default_1 }}"
-i3_client_focused_indicator: "{{ i3_color_default_1 }}"
-
-i3_client_focused_inactive_border: "{{ i3_color_default_2 }}"
-i3_client_focused_inactive_background: "{{ i3_color_default_2 }}"
-i3_client_focused_inactive_text: "{{ i3_color_default_3 }}"
-i3_client_focused_inactive_indicator: "{{ i3_color_default_2 }}"
-
-i3_client_unfocused_border: "{{ i3_color_default_2 }}"
-i3_client_unfocused_inactive_background: "{{ i3_color_default_2 }}"
-i3_client_unfocused_inactive_text: "{{ i3_color_default_3 }}"
-i3_client_unfocused_inactive_indicator: "{{ i3_color_default_2 }}"
-
-
-###########################
-#                         #
 #         Exec            #
 #                         #
 ###########################

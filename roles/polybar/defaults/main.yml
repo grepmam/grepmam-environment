@@ -5,14 +5,20 @@ polybar_config_directory: "{{ polybar_home_directory }}/.config/polybar"
 polybar_subconfig_directory: "{{ polybar_config_directory }}/config.d"
 polybar_scripts_directory: "{{ polybar_config_directory }}/scripts"
 
-polybar_color_background: "#88000000"
-polybar_color_background_alt: "#373B41"
-polybar_color_foreground: "#83d9b6"
-polybar_color_foreground_alt: ""
-polybar_color_primary: "#83d9b6"
-polybar_color_secondary: "#83d9b6"
-polybar_color_alert: "#A54242"
-polybar_color_disabled: "#707880"
-polybar_color_icon: "#fff700"
+polybar_bars_top_width: 100%
+polybar_bars_top_height: 20pt
+polybar_bars_top_radius: 6
+polybar_bars_top_border_size: 6pt
+polybar_bars_top_modules_left: xworkspaces xwindow
+polybar_bars_top_modules_right: blue_dollar mep_dollar wlan eth date time
+polybar_bars_top_separator: "|"
+
+polybar_bars_bottom_width: 100%
+polybar_bars_bottom_height: 20pt
+polybar_bars_bottom_radius: 6
+polybar_bars_bottom_border_size: 6pt
+polybar_bars_bottom_modules_left: 
+polybar_bars_bottom_modules_right: backlight filesystem pulseaudio xkeyboard memory cpu 
+polybar_bars_bottom_separator: "|"
 
 ...

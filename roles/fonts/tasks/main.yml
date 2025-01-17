@@ -1,7 +1,7 @@
 ---
 
 - name: Include install tasks...
-  ansible.builtin.include_tasks: "{{ ansible_os_family | lower }}_install.yml"
+  ansible.builtin.import_tasks: install.yml
   tags: fonts_install, install
 
 - name: Import configure.yml tasks... 

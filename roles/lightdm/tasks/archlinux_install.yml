@@ -1,0 +1,14 @@
+---
+
+- name: Install LightDM and themes...
+  become: true
+  community.general.pacman:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - lightdm
+    - lightdm-webkit2-greeter
+    - lightdm-webkit-theme-litarvan
+  tags: lightdm_install, install
+
+...

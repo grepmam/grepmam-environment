@@ -7,4 +7,6 @@ user:
   name: grepmam
   home: "{{ lookup('env','HOME') }}"
 
+theme: simplified_sunset
+
 ...

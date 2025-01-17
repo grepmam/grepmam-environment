@@ -15,11 +15,13 @@
     - keepassxc
     - curl
     - gcc
+    - code
     - make
     - mypaint
     - discord
     - timeshift
     - arandr
+    - okular
     - gedit
   tags: general_tools_install, install
 
